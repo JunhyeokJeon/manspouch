@@ -16,25 +16,25 @@
       <%= f.label :category %>
       <%= f.select(:category, ['피부', '화장', '헤어', '바디'] , {}, { :class => 'form-control input-select'}) %>
     </div>
-    <div class="field" style="margin-left: 20px;">
+    <div class="field">
       <%= f.label :brand %>
-      <%= f.text_field(:brand, class: 'form-control input-text', style:"width:200px;") %>
+      <%= f.text_field(:brand, class: 'form-control input-text') %>
     </div>
-    <div class="field" style="margin-left: 20px;">
+    <div class="field">
       <%= f.label :price  %>
-      <%= f.number_field(:price, class: 'form-control input-text', style:"width:200px;") %>
+      <%= f.number_field(:price, class: 'form-control input-text') %>
     </div>
   </div>
 
   <div class="d-flex justify-content-start new-form-line">
     <div class="field">
       <%= f.label :name %>
-      <%= f.text_field(:name , class: 'form-control input-text', style: "width:550px;")%>
+      <%= f.text_field(:name , class: 'form-control input-text')%>
     </div>
     <br>
-    <div class="field" style="margin-left:30px;">
-      <p style="margin-top:0">썸네일 이미지 </p>
-      <p style="margin-top:15px;"><%= f.file_field :image %></p>
+    <div class="field">
+      <p>썸네일 이미지 </p>
+      <p><%= f.file_field :image %></p>
     </div>
   </div>
 
@@ -42,19 +42,23 @@
       <%= f.cktext_area :contents %>
   </div>
 
-  <div class="d-flex justify-content-start new-form-line" style="margin: 10px 0">
+  <div class="d-flex justify-content-start new-form-line">
     <div class="field">
       <%= f.label "직업" %>
       <%= f.select( :job,  ['대학생', '고등학생', '영업직', '비즈니스맨'], {}, { :class => 'form-control input-select'}) %>
     </div>
-    <div class="field" style="margin-left:20px;">
+    <div class="field">
       <%= f.label "연령대" %>
       <%= f.select( :age, ['10대', '20대초반', '20대후반', '30대초반', '30대후반', '40대이상'],  {}, { :class => 'form-control input-select'}) %>
     </div>
   </div>
 
   <h3>사용자 유형</h3>
-  <div class="d-flex justify-content-start new-form-line" style="margin: 10px 0;">
+  <div class="d-flex justify-content-start new-form-line">
+    <div class="field">
+      <%= f.label "무관심형" %>
+      <%= f.check_box :notcare, class: "spec-detail" %>
+    </div>
     <div class="field">
       <%= f.label "피부 기초 케어형" %>
       <%= f.check_box :basecare, class: "spec-detail" %>
@@ -67,10 +71,14 @@
       <%= f.label "적극적 화장형" %>
       <%= f.check_box :beautyman, class: "spec-detail" %>
     </div>
+    <div class="field">
+      <%= f.label "아이돌형" %>
+      <%= f.check_box :idol, class: "spec-detail" %>
+    </div>
   </div>
 
   <h3>피부 타입 점수</h3>
-  <div class="d-flex justify-content-start new-form-line" style="margin: 10px 0;">
+  <div class="d-flex justify-content-start new-form-line">
     <div class="field">
       <%= f.label "건성" %>
       <%= f.number_field :dry, class: "spec-detail" %>
@@ -95,7 +103,7 @@
 
 
   <h3>피부 타입</h3>
-  <div class="d-flex justify-content-start new-form-line" style="margin: 10px 0;">
+  <div class="d-flex justify-content-start new-form-line">
     <div class="field">
       <%= f.label "건성" %>
       <%= f.check_box :dryb, class: "spec-detail" %>
@@ -119,7 +127,7 @@
   </div>
 
   <h3>피부 특성</h3>
-  <div class="d-flex justify-content-start new-form-line" style="margin: 10px 0;">
+  <div class="d-flex justify-content-start new-form-line">
     <div class="field">
       <%= f.label "주름이 있는 편이다." %>
       <%= f.check_box :wrinkle, class: "spec-detail" %>
@@ -168,32 +176,12 @@
       <%= f.label "다크써클이 심하다." %>
       <%= f.check_box :dark, class: "spec-detail" %>
     </div>
-    <div class="field">
-      <%= f.label "안면홍조가 있다." %>
-      <%= f.check_box :red, class: "spec-detail" %>
-    </div>
-    <div class="field">
-      <%= f.label "검버섯이 있다." %>
-      <%= f.check_box :agespot, class: "spec-detail" %>
-    </div>
-    <div class="field">
-      <%= f.label "피부가 얇은 편이다." %>
-      <%= f.check_box :thin, class: "spec-detail" %>
-    </div>
-    <div class="field">
-      <%= f.label "안면이 자주 붓는다." %>
-      <%= f.check_box :swell, class: "spec-detail" %>
-    </div>
-    <div class="field">
-      <%= f.label "점이 많다." %>
-      <%= f.check_box :dot, class: "spec-detail" %>
-    </div>
   </div>
 
   <div align="center">
-    <div class="actions" style="margin: 20px 0px;">
-      <%= f.submit "작성", class:"btn btn-secondary", style:"margin-right: 10px;" %>
-      <%= link_to '취소', products_path, class:"btn btn-secondary", style:"margin-left: 10px;" %>
+    <div class="actions">
+      <%= f.submit "작성", class:"btn btn-secondary" %>
+      <%= link_to '취소', products_path, class:"btn btn-secondary" %>
     </div>
   </div>
 <% end %>

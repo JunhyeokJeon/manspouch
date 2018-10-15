@@ -11,33 +11,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :age
       t.string :job
 
-      # user type
-      t.string :usertype
-
-      # skintypes
-      t.string :skintype
-
-      # skintype score
-      t.integer :dry
-      t.integer :normal
-      t.integer :oily
-      t.integer :complex
-      t.integer :sensitive
-
-      # skin properties
-      t.boolean :wrinkle
-      t.boolean :sebum
-      t.boolean :stain
-      t.boolean :bigpore
-      t.boolean :down
-      t.boolean :atopy
-      t.boolean :pimple
-      t.boolean :skindry
-      t.boolean :eruption
-      t.boolean :deadcell
-      t.boolean :freckle
-      t.boolean :dark
-
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

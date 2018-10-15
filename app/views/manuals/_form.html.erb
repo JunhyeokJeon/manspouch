@@ -10,16 +10,17 @@
       </ul>
     </div>
   <% end %>
+
   <div class="d-flex justify-content-start new-form-line">
     <div class="field">
       <%= f.label :category %>
       <%= f.select(:category, ['피부', '화장', '헤어', '바디'] , {}, { :class => 'form-control input-select'}) %>
     </div>
-    <div class="field" style="margin-left: 20px; width: 40%;">
+    <div class="field">
       <%= f.label :title %>
       <%= f.text_field :title ,class: "form-control input-text", style: "width: 100%;"%>
     </div>
-    <div class="field" style="margin-left: 20px; width: 40%;">
+    <div class="field">
       <p style="margin-top:0">썸네일 이미지 </p>
       <p style="margin-top:15px;"><%= f.file_field :image %></p>
     </div>
@@ -29,7 +30,8 @@
     <%= f.cktext_area :content %>
   </div>
 
-  <div class="d-flex justify-content-start new-form-line" style="margin: 10px 0;">
+
+  <div class="d-flex justify-content-start new-form-line">
     <div class="field">
       <%= f.label :job %>
       <%= f.select( :job, ['대학생', '고등학생', '영업직', '비즈니스맨'], {}, { :class => 'form-control input-select'}) %>
@@ -43,16 +45,24 @@
   <h3>사용자 유형</h3>
   <div class="d-flex justify-content-start new-form-line" style="margin: 10px 0;">
     <div class="field">
-      <%= f.label "피부 기초 케어형" %>
+      <%= f.label "무관심형" %>
+      <%= f.check_box :notcare, class: "spec-detail" %>
+    </div>
+    <div class="field">
+      <%= f.label "피부기초케어형" %>
       <%= f.check_box :basecare, class: "spec-detail" %>
     </div>
     <div class="field">
-      <%= f.label "피부 심화 케어형" %>
+      <%= f.label "피부심화케어형" %>
       <%= f.check_box :hardcare, class: "spec-detail" %>
     </div>
     <div class="field">
-      <%= f.label "적극적 화장형" %>
+      <%= f.label "적극적화장형" %>
       <%= f.check_box :beautyman, class: "spec-detail" %>
+    </div>
+    <div class="field">
+      <%= f.label "아이돌형" %>
+      <%= f.check_box :idol, class: "spec-detail" %>
     </div>
   </div>
 
@@ -154,26 +164,6 @@
     <div class="field">
       <%= f.label "다크써클이 심하다." %>
       <%= f.check_box :dark, class: "spec-detail" %>
-    </div>
-    <div class="field">
-      <%= f.label "안면홍조가 있다." %>
-      <%= f.check_box :red, class: "spec-detail" %>
-    </div>
-    <div class="field">
-      <%= f.label "검버섯이 있다." %>
-      <%= f.check_box :agespot, class: "spec-detail" %>
-    </div>
-    <div class="field">
-      <%= f.label "피부가 얇은 편이다." %>
-      <%= f.check_box :thin, class: "spec-detail" %>
-    </div>
-    <div class="field">
-      <%= f.label "안면이 자주 붓는다." %>
-      <%= f.check_box :swell, class: "spec-detail" %>
-    </div>
-    <div class="field">
-      <%= f.label "점이 많다." %>
-      <%= f.check_box :dot, class: "spec-detail" %>
     </div>
   </div>
 

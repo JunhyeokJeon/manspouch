@@ -1,3 +1,9 @@
-<div class="row d-flex justify-content-center manuals-wrap">
-
+<div class="">
+  <% @manuals.each do |manual| %>
+    <div class="">
+      <h4><%= manuals.title %></h4>
+      <p><%= manual.category %></p>
+      <%= link_to_image_tag(manual.image.url(:thumb)), manual_path(manual) %>
+    </div>
+  <% end %>
 </div>

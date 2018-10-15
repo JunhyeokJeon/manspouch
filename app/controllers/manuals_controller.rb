@@ -12,6 +12,7 @@ class ManualsController < ApplicationController
   end
 
   def index
+    @manuals = Manual.all
     # if current_user.userspec
     #   @manuals = Manual.all
     #   sorting(@manuals)
@@ -126,6 +127,13 @@ class ManualsController < ApplicationController
   end
 
   def manual_params
-    params.require(:manual).permit(:category, :title, :image, :content, :skintype, :age, :atopy, :pimple, :allergy, :bb, :lip, :eyebrow, :eyeline, :color, :skincolor)
+    params.require(:manual).permit(
+      :category, :title, :image, :content,
+      :job, :age,
+      :notcare, :basecare, :hardcare, :beautyman, :idol,
+      :dry, :normal, :oily, :complex, :sensitive,
+      :dryb, :normalb, :oilyb, :complexb, :sensitiveb,
+      :wrinkle, :sebum, :stain, :bigpore, :down, :atopy, :pimple, :skindry, :eruption, :deadcell, :freckle, :dark
+    )
   end
 end

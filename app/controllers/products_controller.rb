@@ -68,6 +68,14 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:category, :name, :brand, :price, :image, :contents, :skintype, :age, :atopy, :pimple, :allergy, :bb, :lip, :eyebrow, :eyeline, :color, :skincolor)
+      params.require(:product).permit(
+        :category, :name, :brand, :price,
+        :image, :contents,
+        :job, :age,
+        :notcare, :basecare, :hardcare, :beautyman, :idol,
+        :dry, :normal, :oily, :complex, :sensitive,
+        :dryb, :normalb, :oilyb, :complexb, :sensitiveb,
+        :wrinkle, :sebum, :stain, :bigpore, :down, :atopy, :pimple, :skindry, :eruption, :deadcell, :freckle, :dark
+      )
     end
 end

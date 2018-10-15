@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   #mypouch
   get '/mypouch' => 'mypouch#index'
-  get '/survey' => "mypouch#survey"
+  post '/mypouch/update/:id' => 'mypouch#update'
+  get '/mypouch/survey' => "mypouch#survey"
 
   # reviews
   get 'reviews/create'

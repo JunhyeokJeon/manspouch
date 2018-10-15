@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>MAN'S POUCH</title>
+    
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -32,7 +33,11 @@
 
         <% if user_signed_in? %>
           <ul class="nav navbar-nav navbar-right user-bar">
-            <li class="nav-item"><%= link_to "MyPouch", "/mypouch", class: "nav-link" %></li>
+            <% if current_user.userspec_id? %>
+              <li class="nav-item"><%= link_to "MyPouch", edit_userspec_path(current_user), class: "nav-link" %></li>
+            <% elsif %>
+              <li class="nav-item"><%= link_to "MyPouch", new_userspec_path, class: "nav-link" %></li>
+            <% end %>
             <li class="nav-item"><%= link_to "내 정보", edit_user_registration_path, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "로그아웃", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
           </ul>

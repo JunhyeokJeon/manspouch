@@ -1,5 +1,3 @@
-<!-- <script src="../assets/javascripts/survey.jquery.min.js"></script> -->
-
 <!-- Face Detector -->
 <div id="container">
   <div id="header">
@@ -39,9 +37,11 @@
 </div>
 
 <!-- hidden form -->
-<form action="/mypouch" method="get">
+<form action="/mypouch/update/<%= current_user.id %>" method="post">
   <br><br>
   <input type="text" id="skintype" name="skintype">
+  <br><br>
+  <input type="text" id="usertype" name="usertype">
 
   <br><br>
   <input type="text" id="wrinkle" name="wrinkle">
@@ -56,9 +56,6 @@
   <input type="text" id="deadcell" name="deadcell">
   <input type="text" id="freckle" name="freckle">
   <input type="text" id="dark" name="dark">
-
-  <br><br>
-  <input type="text" id="usertype" name="usertype">
 
   <br><br>
   <input type="hidden" value="설문완료" class="btn btn-primary" id="survey-btn">
