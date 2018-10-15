@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Userspecs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @userspecs.each do |userspec| %>
+      <tr>
+        <td><%= link_to 'Show', userspec %></td>
+        <td><%= link_to 'Edit', edit_userspec_path(userspec) %></td>
+        <td><%= link_to 'Destroy', userspec, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Userspec', new_userspec_path %>

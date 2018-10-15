@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180822091749) do
+ActiveRecord::Schema.define(version: 20181015131844) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -189,6 +189,7 @@ ActiveRecord::Schema.define(version: 20180822091749) do
     t.datetime "updated_at",                          null: false
     t.string   "phone"
     t.string   "nickname"
+    t.integer  "userspec_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -199,6 +200,31 @@ ActiveRecord::Schema.define(version: 20180822091749) do
     t.index ["role_id"], name: "index_users_roles_on_role_id"
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
     t.index ["user_id"], name: "index_users_roles_on_user_id"
+  end
+
+  create_table "userspecs", force: :cascade do |t|
+    t.string   "usertype"
+    t.string   "skintype"
+    t.integer  "dry"
+    t.integer  "normal"
+    t.integer  "oily"
+    t.integer  "complex"
+    t.integer  "sensitive"
+    t.boolean  "wrinkle"
+    t.boolean  "sebum"
+    t.boolean  "stain"
+    t.boolean  "bigpore"
+    t.boolean  "down"
+    t.boolean  "atopy"
+    t.boolean  "pimple"
+    t.boolean  "skindry"
+    t.boolean  "eruption"
+    t.boolean  "deadcell"
+    t.boolean  "freckle"
+    t.boolean  "dark"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "votes", force: :cascade do |t|

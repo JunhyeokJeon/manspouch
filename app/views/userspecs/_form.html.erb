@@ -36,30 +36,44 @@
 <div id="surveyContainer">
 </div>
 
-<!-- hidden form -->
-<form action="/mypouch/update/<%= current_user.id %>" method="post">
-  <br><br>
-  <input type="text" id="skintype" name="skintype">
-  <br><br>
-  <input type="text" id="usertype" name="usertype">
+<%= simple_form_for(@userspec) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <br><br>
-  <input type="text" id="wrinkle" name="wrinkle">
-  <input type="text" id="sebum" name="sebum">
-  <input type="text" id="stain" name="stain">
-  <input type="text" id="bigpore" name="bigpore">
-  <input type="text" id="down" name="down">
-  <input type="text" id="atopy" name="atopy">
-  <input type="text" id="pimple" name="pimple">
-  <input type="text" id="skindry" name="skindry">
-  <input type="text" id="eruption" name="eruption">
-  <input type="text" id="deadcell" name="deadcell">
-  <input type="text" id="freckle" name="freckle">
-  <input type="text" id="dark" name="dark">
+  <div class="form-inputs">
 
-  <br><br>
-  <input type="hidden" value="설문완료" class="btn btn-primary" id="survey-btn">
-</form>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+  <!-- hidden form -->
+  <form method="post">
+    <br><br>
+    <input type="text" id="skintype" name="skintype">
+    <br><br>
+    <input type="text" id="usertype" name="usertype">
+
+    <br><br>
+    <input type="text" id="wrinkle" name="wrinkle">
+    <input type="text" id="sebum" name="sebum">
+    <input type="text" id="stain" name="stain">
+    <input type="text" id="bigpore" name="bigpore">
+    <input type="text" id="down" name="down">
+    <input type="text" id="atopy" name="atopy">
+    <input type="text" id="pimple" name="pimple">
+    <input type="text" id="skindry" name="skindry">
+    <input type="text" id="eruption" name="eruption">
+    <input type="text" id="deadcell" name="deadcell">
+    <input type="text" id="freckle" name="freckle">
+    <input type="text" id="dark" name="dark">
+
+    <br><br>
+    <input type="hidden" value="설문완료" class="btn btn-primary" id="survey-btn">
+  </form>
+<% end %>
 
 <!-- javascripts -->
 <script>

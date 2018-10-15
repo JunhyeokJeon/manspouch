@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
+  resources :userspecs
   mount Ckeditor::Engine => '/ckeditor'
   root 'home#index'
 
   #mypouch
   get '/mypouch' => 'mypouch#index'
-  post '/mypouch/update/:id' => 'mypouch#update'
-  get '/mypouch/survey' => "mypouch#survey"
+
+  #userpsec
+  get '/userspec/edit' => 'userspec#edit'
+  get '/userspec/new' => 'userspec#new'
+  post '/userspec/create' => 'userspec#create'
+  get '/userspec/:id/edit' => 'userspec#edit'
 
   # reviews
   get 'reviews/create'
