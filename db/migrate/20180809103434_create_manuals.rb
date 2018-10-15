@@ -42,6 +42,11 @@ class CreateManuals < ActiveRecord::Migration[5.0]
       t.boolean :deadcell
       t.boolean :freckle
       t.boolean :dark
+      t.boolean :headcell
+      t.boolean :hairlose
+      t.boolean :bodypimple
+      t.boolean :bodycell
+      t.boolean :bodydry
 
       t.timestamps
     end

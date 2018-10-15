@@ -25,12 +25,31 @@ class UserspecsController < ApplicationController
   # POST /userspecs.json
   def create
     @userspec = Userspec.new(userspec_params)
+
     @userspec.user = current_user
     @userspec.usertype = params[:usertype]
+    @userspec.skintype = params[:skintype]
+    @userspec.wrinkle = params[:wrinkle]
+    @userspec.sebum = params[:sebum]
+    @userspec.stain = params[:stain]
+    @userspec.bigpore = params[:bigpore]
+    @userspec.down = params[:down]
+    @userspec.atopy = params[:atopy]
+    @userspec.pimple = params[:pimple]
+    @userspec.skindry = params[:skindry]
+    @userspec.eruption = params[:eruption]
+    @userspec.deadcell = params[:deadcell]
+    @userspec.freckle = params[:freckle]
+    @userspec.dark = params[:dark]
+    @userspec.headcell = params[:headcell]
+    @userspec.hairlose = params[:hairlose]
+    @userspec.bodypimple = params[:bodypimple]
+    @userspec.bodycell = params[:bodycell]
+    @userspec.bodydry = params[:bodydry]
 
     respond_to do |format|
       if @userspec.save
-        format.html { redirect_to @userspec, notice: 'Userspec was successfully created.' }
+        format.html { redirect_to "/mypouch", notice: 'Userspec was successfully created.' }
         format.json { render :show, status: :created, location: @userspec }
       else
         format.html { render :new }
@@ -42,9 +61,30 @@ class UserspecsController < ApplicationController
   # PATCH/PUT /userspecs/1
   # PATCH/PUT /userspecs/1.json
   def update
+    @userspec = Userspec.find(params[:id])
+    @userspec.usertype = params[:usertype]
+    @userspec.skintype = params[:skintype]
+    @userspec.wrinkle = params[:wrinkle]
+    @userspec.sebum = params[:sebum]
+    @userspec.stain = params[:stain]
+    @userspec.bigpore = params[:bigpore]
+    @userspec.down = params[:down]
+    @userspec.atopy = params[:atopy]
+    @userspec.pimple = params[:pimple]
+    @userspec.skindry = params[:skindry]
+    @userspec.eruption = params[:eruption]
+    @userspec.deadcell = params[:deadcell]
+    @userspec.freckle = params[:freckle]
+    @userspec.dark = params[:dark]
+    @userspec.headcell = params[:headcell]
+    @userspec.hairlose = params[:hairlose]
+    @userspec.bodypimple = params[:bodypimple]
+    @userspec.bodycell = params[:bodycell]
+    @userspec.bodydry = params[:bodydry]
+
     respond_to do |format|
       if @userspec.update(userspec_params)
-        format.html { redirect_to @userspec, notice: 'Userspec was successfully updated.' }
+        format.html { redirect_to "/mypouch", notice: 'Userspec was successfully updated.' }
         format.json { render :show, status: :ok, location: @userspec }
       else
         format.html { render :edit }

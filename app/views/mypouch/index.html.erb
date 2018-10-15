@@ -5,12 +5,11 @@
 <div class="">
   <div class="">
     <div class="">
-      <% if current_user.userspec_id? %>
-        <%= link_to "나의피부타입 알아보기", edit_userspec_path(current_user.userspec_id), class: "nav-link" %>
+      <% if current_user.userspec != nil %>
+        <%= link_to "나의피부타입 알아보기", edit_userspec_path(current_user.userspec), class: "nav-link" %>
       <% elsif %>
         <%= link_to "나의피부타입 알아보기", new_userspec_path, class: "nav-link" %>
       <% end %>
-
     </div>
     <div class="">내 피부 타입</div>
   </div>

@@ -1,8 +1,6 @@
 class MypouchController < ApplicationController
 
   def index
-    @w = params[:skintype]
-    @ut = params[:usertype]
   end
 
   def update

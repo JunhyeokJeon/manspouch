@@ -93,6 +93,11 @@ ActiveRecord::Schema.define(version: 20181015131844) do
     t.boolean  "deadcell"
     t.boolean  "freckle"
     t.boolean  "dark"
+    t.boolean  "headcell"
+    t.boolean  "hairlose"
+    t.boolean  "bodypimple"
+    t.boolean  "bodycell"
+    t.boolean  "bodydry"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "user_id"
@@ -137,6 +142,11 @@ ActiveRecord::Schema.define(version: 20181015131844) do
     t.boolean  "deadcell"
     t.boolean  "freckle"
     t.boolean  "dark"
+    t.boolean  "headcell"
+    t.boolean  "hairlose"
+    t.boolean  "bodypimple"
+    t.boolean  "bodycell"
+    t.boolean  "bodydry"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "user_id"
@@ -222,6 +232,11 @@ ActiveRecord::Schema.define(version: 20181015131844) do
     t.boolean  "deadcell"
     t.boolean  "freckle"
     t.boolean  "dark"
+    t.boolean  "headcell"
+    t.boolean  "hairlose"
+    t.boolean  "bodypimple"
+    t.boolean  "bodycell"
+    t.boolean  "bodydry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"

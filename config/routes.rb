@@ -6,12 +6,6 @@ Rails.application.routes.draw do
   #mypouch
   get '/mypouch' => 'mypouch#index'
 
-  #userpsec
-  get '/userspec/edit' => 'userspec#edit'
-  get '/userspec/new' => 'userspec#new'
-  post '/userspec/create' => 'userspec#create'
-  get '/userspec/:id/edit' => 'userspec#edit'
-
   # reviews
   get 'reviews/create'
   get 'reviews/destroy'
