@@ -1,0 +1,26 @@
+<div class="manuals-best-wrap">
+
+  <h4 align="center" class="manuals-best-title">
+    <% if user_signed_in?  %>
+      <span style="color: #1A2E65;"><%= current_user.nickname %></span> 님에게 제공되는 맞춤 메뉴얼 상위 4개입니다.
+    <% end %>
+  </h4>
+  <p align="center" class="custom-title-below" style="color: #7F8C8D;">
+    <span class="badge badge-pill badge-success">
+
+    </span>
+    <span class="badge badge-pill badge-success">
+
+    </span>
+    <% box =['atopy', 'pimple', 'allergy', 'bb', 'lip', 'eyebrow', 'eyeline'] %>
+    <% box.each do |key| %>
+
+    <% end %>정보를 반영했습니다.
+    <br>
+  </p>
+
+  <div class="row d-flex justify-content-center manuals-best-box">
+
+  </div>
+
+</div>
