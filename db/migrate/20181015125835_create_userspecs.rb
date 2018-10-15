@@ -27,7 +27,8 @@ class CreateUserspecs < ActiveRecord::Migration[5.0]
       t.boolean :deadcell
       t.boolean :freckle
       t.boolean :dark
-      t.boolean :headcell
+      t.boolean :hairpimple
+      t.boolean :haircell
       t.boolean :hairlose
       t.boolean :bodypimple
       t.boolean :bodycell

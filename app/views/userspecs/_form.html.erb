@@ -60,7 +60,8 @@
     <input type="text" id="deadcell" name="deadcell">
     <input type="text" id="freckle" name="freckle">
     <input type="text" id="dark" name="dark">
-    <input type="text" id="headcell" name="headcell">
+    <input type="text" id="hairpimple" name="hairpimple">
+    <input type="text" id="haircell" name="haircell">
     <input type="text" id="hairlose" name="hairlose">
     <input type="text" id="bodypimple" name="bodypimple">
     <input type="text" id="bodycell" name="bodycell">
@@ -93,7 +94,8 @@
     var deadcell = false;
     var freckle = false;
     var dark = false;
-    var headcell = false;
+    var hairpimple = false;
+    var haircell = false;
     var hairlose = false;
     var bodypimple = false;
     var bodycell = false
@@ -163,14 +165,16 @@
       } else if (survey.data['question26'][i] == 'item12'){
         dark = true;
       } else if (survey.data['question26'][i] == 'item13'){
-        headcell = true;
+        hairpimple = true;
       } else if (survey.data['question26'][i] == 'item14'){
-        hairlose = true;
+        haircell = true;
       } else if (survey.data['question26'][i] == 'item15'){
-        bodypimple = true;
+        hairlose = true;
       } else if (survey.data['question26'][i] == 'item16'){
-        bodycell = true;
+        bodypimple = true;
       } else if (survey.data['question26'][i] == 'item17'){
+        bodycell = true;
+      } else if (survey.data['question26'][i] == 'item18'){
         bodydry = true;
       }
     }
@@ -188,7 +192,8 @@
     document.getElementById("deadcell").value = deadcell;
     document.getElementById("freckle").value = freckle;
     document.getElementById("dark").value = dark;
-    document.getElementById("headcell").value = headcell;
+    document.getElementById("hairpimple").value = hairpimple;
+    document.getElementById("haircell").value = haircell;
     document.getElementById("hairlose").value = hairlose;
     document.getElementById("bodypimple").value = bodypimple;
     document.getElementById("bodycell").value = bodycell;

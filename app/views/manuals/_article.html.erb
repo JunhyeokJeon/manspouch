@@ -3,7 +3,7 @@
     <div class="">
       <h4><%= manuals.title %></h4>
       <p><%= manual.category %></p>
-      <%= link_to_image_tag(manual.image.url(:thumb)), manual_path(manual) %>
+      <%= link_to image_tag(manual.image.url(:thumb)), manual_path(manual) %>
     </div>
   <% end %>
 </div>
