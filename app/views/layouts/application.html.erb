@@ -8,24 +8,32 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.esm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.esm.bundle.js"></script>
   </head>
 
   <body>
     <div class="left-box">
       <div class="left-logo">
-        <a href="/"><img src="<%= asset_path 'mans-logo.png'%>" alt=""></a>
+        <a href="/"><img src="<%= asset_path 'manslogo.png'%>" alt=""></a>
       </div>
 
       <div class="left-user">
         <% if user_signed_in? %>
           <ul>
-            <li><a href="/mypouch">나만의 파우치 대쉬보드</a></li>
+            <li><a href="/mypouch">My 파우치</a>&nbsp&nbsp·</li>
             <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete %></li>
           </ul>
         <% elsif %>
-          <ul class="">
-            <li class=""><%= link_to "회원가입", new_user_registration_path %></li>
-            <li class=""><%= link_to "로그인", new_user_session_path %></li>
+          <ul>
+            <li><%= link_to "로그인", new_user_session_path %>&nbsp&nbsp·</li>
+            <li><%= link_to "회원가입", new_user_registration_path %></li>
           </ul>
         <% end %>
       </div>
@@ -46,20 +54,6 @@
           <% end %>
         </ul>
       </div>
-      <!-- <div class="left-user">
-        <% if user_signed_in? %>
-          <ul class="nav navbar-nav navbar-right user-bar">
-            <li class="nav-item"><%= link_to "MyPouch", "/mypouch", class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "내 정보", edit_user_registration_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "로그아웃", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
-          </ul>
-        <% else %>
-          <ul class="nav navbar-nav navbar-right user-bar">
-            <li class="nav-item"><%= link_to "회원가입", new_user_registration_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "로그인", new_user_session_path, class: "nav-link" %></li>
-          </ul>
-        <% end %>
-      </div> -->
     </div>
 
     <div class="main-container">

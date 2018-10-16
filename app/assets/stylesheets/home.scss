@@ -1,9 +1,16 @@
 @font-face { font-family: 'Binggrae-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&subset=korean');
+body { font-family: 'Noto Sans KR', sans-serif; }
+a { text-decoration: none; color: black; }
 
 /* home-box 1 */
 .home-box1 {
   padding-top: 50px;
   padding-bottom: 20px;
+  font-size: 3em;
+  letter-spacing: -3px;
+  font-weight: 700;
+  line-height: 1.3em;
 }
 
 /* home-box 2 */
@@ -11,18 +18,27 @@
   display: flex;
   justify-content: left;
 }
-.home-inner-box { width: 50%; }
+.home-inner-box {
+  width: 50%;
+  font-size: 1.3em;
+  letter-spacing: -2px;
+  font-weight: 400;
+}
 .main-comm2 {
   padding-bottom: 50px;
 }
 .inner-btn {
-  width: 160px;
-  height: 35px;
-  background: #fff;
+  display: block;
+  width: 250px;
+  height: 55px;
+  color: #fff;
+  font-weight: 500;
   text-align: center;
-  line-height: 35px;
+  line-height: 55px;
+  border-radius: 35px;
+  background: linear-gradient(to left,#66a6ff,#74c6ff);
 }
-
+.inner-btn:hover { opacity: 0.5; }
 .home-line {
   width: 300px;
   border-bottom: 1px solid #dbdbdb;
@@ -30,12 +46,66 @@
 
 /* home-box 3 */
 .home-box3 {
+  margin-top: 60px;
 }
-.home-hline {
+.home-hbox {
     display: flex;
     justify-content: left;
+    margin-bottom: 50px;
+}
+.home-t {
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-right: 10px;
+}
+.home-title-1 {
+  width: 140px;
+  height: 40px;
+}
+.home-more {
+  display: block;
+  width: 90px;
+  height: 30px;
+  margin-top: 5px;
+  color: #fff;
+  letter-spacing: -2px;
+  font-size: 1.2em;
+  font-weight: 400;
+  text-align: center;
+  line-height: 30px;
+  background: darkorange;
+  border-radius: 20px;
 }
 
+.swiper-wrapper { width: 100% !important; }
+.swiper-slide { width: 440px !important; }
+.swiper-slide:hover { opacity: 0.5; }
+.swiper-img {
+  width: 100% !important;
+  height: 320px !important;
+  overflow: hidden;
+}
+.swiper-img img { width: 100%; }
+.swiper-bottom {
+  height: 60px;
+  width: 100%;
+  text-align: right;
+  line-height: 60px;
+  font-size: 1.4em;
+}
+.home-star { margin-top: 5px; }
+
+/* hoem-box 4 */
+.home-article {
+  margin-bottom: 50px;
+  height: 400px;
+  /* height 80px는 여분 공간 */
+}
+.home-title-2 {
+  width: 90px;
+  height: 40px;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // /* banner */

@@ -12,7 +12,7 @@ task :add_users => [:environment] do
   age = ['10대', '20대초반', '20대후반', '30대초반', '30대후반', '40대이상']
   job = ['비즈니스맨', '대학생', '취준생', '회사원', '변호사', '백수']
   (1..10).each do
-  pass = Faker::Internet.password(8)
+    pass = Faker::Internet.password(8)
     User.create({
       :email => Faker::Internet.email,
       :nickname => Faker::Internet.user_name(5..8),
