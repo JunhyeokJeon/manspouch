@@ -13,9 +13,10 @@
   <body>
     <div class="left-box">
       <div class="left-logo">
-        <img src="<%= asset_path 'mans-logo.png'%>" alt="">
+        <a href="/"><img src="<%= asset_path 'mans-logo.png'%>" alt=""></a>
       </div>
-      <div class="left-my-btn">
+
+      <div class="left-user">
         <% if user_signed_in? %>
           <ul>
             <li><a href="/mypouch">나만의 파우치 대쉬보드</a></li>
@@ -28,9 +29,10 @@
           </ul>
         <% end %>
       </div>
-      <div class="left-search">
 
+      <div class="left-search">
       </div>
+
       <div class="left-nav">
         <ul>
           <li><a class="" href="<%= manuals_path %>">뷰티 설명서</a></li>
