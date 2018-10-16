@@ -1,11 +1,40 @@
 @font-face { font-family: 'Binggrae-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
 
+/* home-box 1 */
+.home-box1 {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
 
+/* home-box 2 */
+.home-box2 {
+  display: flex;
+  justify-content: left;
+}
+.home-inner-box { width: 50%; }
+.main-comm2 {
+  padding-bottom: 50px;
+}
+.inner-btn {
+  width: 160px;
+  height: 35px;
+  background: #fff;
+  text-align: center;
+  line-height: 35px;
+}
 
+.home-line {
+  width: 300px;
+  border-bottom: 1px solid #dbdbdb;
+}
 
-
-
-
+/* home-box 3 */
+.home-box3 {
+}
+.home-hline {
+    display: flex;
+    justify-content: left;
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -24,10 +24,10 @@ body { background: #fafafa; }
   width: 240px;
   padding: 30px;
   background: #fff;
-  border-right: 1px solid #efefef;
+  border-right: 1px solid #dbdbdb;
 }
 .left-logo img { width: 80%; margin: 0 auto; }
-.left-my-btn {
+.left-user {
   border-top: 1px solid #555;
   border-bottom: 1px solid #555;
   width: 90%;
@@ -36,14 +36,11 @@ body { background: #fafafa; }
 .left-nav {
   position: relative;
 }
-.left-user {
-  position: relative;
-}
 
 /* main-container */
 .main-container {
   margin-left: 300px;
-  padding: 30px;
+  padding: 60px 0 0 60px;
 }
 .deco-img {
   position: absolute;
