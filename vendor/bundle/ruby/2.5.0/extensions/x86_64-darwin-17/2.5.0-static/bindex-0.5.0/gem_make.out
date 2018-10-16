@@ -1,0 +1,15 @@
+current directory: /Users/opendoor/Desktop/manspouch/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+/Users/opendoor/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20181016-51223-1q38rt6.rb extconf.rb
+creating Makefile
+
+current directory: /Users/opendoor/Desktop/manspouch/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/opendoor/Desktop/manspouch/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/opendoor/Desktop/manspouch/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20181016-51223-uk0pnp/bindex
