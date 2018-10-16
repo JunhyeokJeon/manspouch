@@ -32,50 +32,100 @@
   </예제>
 -->
 <script language="JavaScript" type="text/javascript">
-$(document).ready(function(){ 
+$(document).ready(function(){
     a = $('.m_flex').css('width');
-    $('.m_flex').css('height', a); 
-    $(window).resize(function() { 
+    $('.m_flex').css('height', a);
+    $(window).resize(function() {
         a = $('.m_flex').css('width');
-        $('.m_flex').css('height', a); 
-    }); 
+        $('.m_flex').css('height', a);
+    });
     console.log(a);
 });
 </script>
 
 
 <div class="my_top1">
-  <span class="mt_1">정연진 님의</span>
+  <span class="mt_1"><%= current_user.nickname %> 님의</span>
   <br>
   <span class="mt_2">나만의 파우치</span></div>
 <div class="my_top2">
   <div class="m_flex">
       <div class="m_faceimg"><img src="<%= asset_path 'face.png'%>" alt=""><br>
-        <span style="font-size:1.3em;font-weight:700; color:#888;">나만의 분석</span>
+        <span style="font-size:1.3em;font-weight:700; color:#888;">
+          <% if current_user.userspec != nil %>
+            <%= link_to "나만의 분석", edit_userspec_path(current_user.userspec) %>
+          <% elsif %>
+            <%= link_to "나만의 분석", new_userspec_path %>
+          <% end %>
+        </span>
       </div>
   </div>
   <div class="m_flex" style="background:#f475ab;border:0;">
       <div class="m_flex_type">
         <span style="font-size:1.3em; font-wieght:700; ">피부타입</span><br>
-        <span style="font-size:5em; font-weight:100;">건성</span>
+        <span style="font-size:3em; font-weight:100;">
+          <% if current_user.userspec != nil %>
+            <%= @userspec.skintype %>
+          <% elsif %>
+            ←
+          <% end %>
+        </span>
       </div>
 
   </div>
   <div class="m_flex_result" style="flex:2;margin-right:0px;flex-direction:column;">
-      <div>트러블  </div>
-      <div>헤어  </div>
-      <div style="margin:0;">나이  </div>
+      <div>
+        <p>트러블</p>
+        <% if current_user.userspec != nil %>
+          <%
+            box = ['주름', '피지', '잡티', '모공', '탄력저하', '아토피', '여드름',
+                   '건조', '뾰루지', '각질', '기미', '다크써클', '두피여드름', '두피각질',
+                   '탈모', '바디여드름', '바디각질', '바디건조']
+            key = ['wrinkle', 'sebum', 'stain', 'bigpore', 'down', 'atopy', 'pimple',
+                   'skindry', 'eruption', 'deadcell', 'freckle', 'dark', 'hairpimple',
+                   'haircell', 'hairlose', 'bodypimple', 'bodycell', 'bodydry']
+            i = 0
+          %>
+          <p>
+            <% key.each do |k| %>
+              <% if @userspec[k] == true %>
+                <span class="my-skinpro"><%= box[i] %></span>
+              <% end %>
+              <% i += 1 %>
+            <% end %>
+          </p>
+        <% elsif %>
+          <p></p>
+        <% end %>
+      </div>
+      <div style="margin:0;">
+        <p>나이</p>
+        <p><span class="my-skinpro-a"><%= current_user.age %></span></p>
+      </div>
   </div>
 </div>
 <div class="m_top3">
   <div class="m_3" >
-    뷰티 설명서 <span class="btn_mmore">더보기</span>
+    <p>뷰티 설명서 <span class="btn_mmore">더보기</span></p>
+    <div class="m_3_in">
+      <% @manuals.each do |manual| %>
+        <div class="m_3_in_w">
+          <div class="m_3_in_img">
+            <%= link_to image_tag(manual.image.url(:thumb)), manual_path(manual) %>
+          </div>
+          <div class="m_3_in_t">
+            a
+          </div>
+        </div>
+      <% end %>
     </div>
+  </div>
+
   <div class="m_3mid">
-    
+
   </div>
   <div class="m_3">
-    맞춤 제품 <span class="btn_mmore">더보기</span>
-    </div>
+    <p>맞춤 제품 <span class="btn_mmore">더보기</span></p>
+  </div>
 
 </div>
