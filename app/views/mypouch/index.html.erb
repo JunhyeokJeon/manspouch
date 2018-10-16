@@ -31,8 +31,40 @@
     </div>
   </예제>
 -->
+<script language="JavaScript" type="text/javascript">
+$(document).ready(function(){ 
+    a = $('.m_flex').css('width');
+    $('.m_flex').css('height', a); 
+    $(window).resize(function() { 
+        a = $('.m_flex').css('width');
+        $('.m_flex').css('height', a); 
+    }); 
+    console.log(a);
+});
+</script>
 
-<div class="my_top"><span class="mt_1">정연진 님의</span><br><span class="mt_2">나만의 파우치</span></div>
-<div class="my_top"></div>
-<div class="my_top"></div>
 
+<div class="my_top1">
+  <span class="mt_1">정연진 님의</span>
+  <br>
+  <span class="mt_2">나만의 파우치</span></div>
+<div class="my_top2">
+  <div class="m_flex">
+
+  </div>
+  <div class="m_flex" style="background:#f475ab;border:0;">
+    
+  </div>
+  <div class="m_flex" style="flex:2;margin-right:0px;">
+    
+  </div>
+</div>
+<div class="m_top3">
+  <div class="m_3">
+    뷰티 설명서
+    </div>
+  <div class="m_3">
+    맞춤 제품
+    </div>
+
+</div>

@@ -1,9 +1,32 @@
 .mt_1{
-    font-size:30px;
+    font-size:2em;
     color:#bbb;
     letter-spacing: -2px;
 }
 .mt_2{
-    font-size:60px;
+    font-size:4em;
     letter-spacing: -2px;
+}
+
+.my_top2{
+    margin-top:40px;
+    margin-right:60px;
+    display:flex;
+
+}
+
+.m_flex{
+    flex:1;
+    height:250px;
+    margin-right:30px;
+    background:#fff;
+    border:1px solid #ddd;
+}
+.m_top3{
+    display:flex;
+    margin-top:30px;
+}
+.m_3{
+    width:50%;
+
 }
