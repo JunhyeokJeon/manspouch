@@ -1,9 +1,88 @@
-.mt_1{
-    font-size:30px;
-    color:#bbb;
-    letter-spacing: -2px;
+@media screen and (min-width:1px) {
+    .mt_1{
+        font-size:2em;
+        color:#bbb;
+        letter-spacing: -2px;
+    }
+    .mt_2{
+        font-size:4em;
+        letter-spacing: -2px;
+    }
+
+    .my_top2{
+        margin-top:40px;
+        margin-right:60px;
+        display:flex;
+    
+    }
+    .m_faceimg{
+        margin: 0 auto;
+        text-align: center;
+        img{
+            width:70%;
+            height:70%;
+            margin-bottom: 10px;
+        }
+    }
+    .m_flex_type{
+        margin: 0 auto;
+        text-align: center;
+        span{
+            color:white !important;
+        }
+    }
+    .m_flex{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex:1;
+        margin-right:30px;
+        background:#fff;
+        border:1px solid #ddd;
+    }
+    .m_flex_result{
+        display:flex;
+        justify-content: center;
+        align-items: left;
+        flex:1;
+        margin-right:30px;
+        background:#fff;
+        border:1px solid #ddd;
+        div{
+            padding-left:10%;
+            margin-bottom: 30px;
+            font-size:1.5em;
+            font-weight:700;
+        }
+    }
+    .m_top3{
+        display:flex;
+        margin-top:30px;
+        div{
+            font-size:1.7em;
+            font-weight:700;
+        }
+    }
+    .m_3{
+        width:49%;
+    
+    }
+    .m_3mid{
+        width:2%;
+        height:300px;
+        border-left: 1px solid #ddd;
+    }
+    .btn_mmore{
+        margin-left:10px;
+        position: relative;
+        top:-5px;
+        font-size:12px;
+        padding:5px 20px 5px 20px;
+        color : white;
+        background:#93abe2;
+        border-radius: 50px;
+    }
 }
-.mt_2{
-    font-size:60px;
-    letter-spacing: -2px;
+@media screen and (max-width:0px) {
 }
+

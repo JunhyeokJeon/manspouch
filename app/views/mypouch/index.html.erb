@@ -31,8 +31,51 @@
     </div>
   </예제>
 -->
+<script language="JavaScript" type="text/javascript">
+$(document).ready(function(){ 
+    a = $('.m_flex').css('width');
+    $('.m_flex').css('height', a); 
+    $(window).resize(function() { 
+        a = $('.m_flex').css('width');
+        $('.m_flex').css('height', a); 
+    }); 
+    console.log(a);
+});
+</script>
 
-<div class="my_top"><span class="mt_1">정연진 님의</span><br><span class="mt_2">나만의 파우치</span></div>
-<div class="my_top"></div>
-<div class="my_top"></div>
 
+<div class="my_top1">
+  <span class="mt_1">정연진 님의</span>
+  <br>
+  <span class="mt_2">나만의 파우치</span></div>
+<div class="my_top2">
+  <div class="m_flex">
+      <div class="m_faceimg"><img src="<%= asset_path 'face.png'%>" alt=""><br>
+        <span style="font-size:1.3em;font-weight:700; color:#888;">나만의 분석</span>
+      </div>
+  </div>
+  <div class="m_flex" style="background:#f475ab;border:0;">
+      <div class="m_flex_type">
+        <span style="font-size:1.3em; font-wieght:700; ">피부타입</span><br>
+        <span style="font-size:5em; font-weight:100;">건성</span>
+      </div>
+
+  </div>
+  <div class="m_flex_result" style="flex:2;margin-right:0px;flex-direction:column;">
+      <div>트러블  </div>
+      <div>헤어  </div>
+      <div style="margin:0;">나이  </div>
+  </div>
+</div>
+<div class="m_top3">
+  <div class="m_3" >
+    뷰티 설명서 <span class="btn_mmore">더보기</span>
+    </div>
+  <div class="m_3mid">
+    
+  </div>
+  <div class="m_3">
+    맞춤 제품 <span class="btn_mmore">더보기</span>
+    </div>
+
+</div>
