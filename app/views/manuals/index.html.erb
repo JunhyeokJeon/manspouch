@@ -1,10 +1,12 @@
-<%= render "header" %>
-<%= render "article" %>
+<div class="manu_top1">
+  <span class="manu_t1">뷰티 설명서</span><br>
+  <span class="manu_t2">모두 ∙ 피부 ∙ 화장 ∙ 바디 ∙ 헤어</span>
+</div>
+<div class="item-container">
+  <div class="item-each"></div>
+  <div class="item-each"></div>
+  <div class="item-each"></div>
+  <div class="item-each"></div>
 
-<% if current_user && current_user.roles.first.name == 'admin' %>
-  <%= link_to '새 메뉴얼 등록', new_manual_path,
-              class: "btn btn-primary",
-              style: "display: block; width: 20%; margin: 20px auto;" %>
-<% end %>
 
-<!-- <%= @manualArray %> -->
+</div>
