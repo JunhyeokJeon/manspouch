@@ -15,8 +15,6 @@ task :add_users => [:environment] do
       :email => Faker::Internet.email,
       :nickname => Faker::Internet.user_name(5..8),
       :phone => phone.sample,
-      :skintype => skintype.sample,
-      :usertype => usertpye.sample,
       :password => pass,
       :password_confirmation => pass
       })
@@ -41,7 +39,9 @@ task :add_products => [:environment] do
                     :wrinkle => bool.sample, :sebum => bool.sample, :stain => bool.sample,
                     :bigpore => bool.sample, :down => bool.sample, :atopy => bool.sample,
                     :pimple => bool.sample, :skindry => bool.sample, :eruption => bool.sample,
-                    :deadcell => bool.sample, :freckle => bool.sample, :dark => bool.sample
+                    :deadcell => bool.sample, :freckle => bool.sample, :dark => bool.sample,
+                    :hairpimple => bool.sample, :haircell => bool.sample, :hairlose => bool.sample,
+                    :bodypimple => bool.sample, :bodycell => bool.sample, :bodydry => bool.sample
                     })
   end
 end
@@ -64,7 +64,9 @@ task :add_manuals => [:environment] do
                    :wrinkle => bool.sample, :sebum => bool.sample, :stain => bool.sample,
                    :bigpore => bool.sample, :down => bool.sample, :atopy => bool.sample,
                    :pimple => bool.sample, :skindry => bool.sample, :eruption => bool.sample,
-                   :deadcell => bool.sample, :freckle => bool.sample, :dark => bool.sample
+                   :deadcell => bool.sample, :freckle => bool.sample, :dark => bool.sample,
+                   :hairpimple => bool.sample, :haircell => bool.sample, :hairlose => bool.sample,
+                   :bodypimple => bool.sample, :bodycell => bool.sample, :bodydry => bool.sample
                    })
   end
 end

@@ -1,9 +1,10 @@
 class ManualsController < ApplicationController
   before_action :set_manual, only: [:show, :edit, :update, :destroy, :upvote]
+  before_action :log_impression, :only=> [:show]
   # before_action :authenticate_user!
   load_and_authorize_resource
 
-  before_action :log_impression, :only=> [:show]
+
 
   def log_impression
     @hit_manual = Manual.find(params[:id])
@@ -13,12 +14,6 @@ class ManualsController < ApplicationController
 
   def index
     @manuals = Manual.all
-    # if current_user.userspec
-    #   @manuals = Manual.all
-    #   sorting(@manuals)
-    # elsif
-    #   @manuals = Manual.all.order("created_at DESC")
-    # end
   end
 
   def category
