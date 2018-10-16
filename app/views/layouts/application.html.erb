@@ -11,26 +11,40 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav-bar">
-      <div class="container">
-        <div class="navbar-brand main-logo-box"><%= link_to image_tag("main-logo.png", :class => "main-logo-img"), root_path, class: "main-logo" %></div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav main-nav">
-            <a class="nav-item nav-link active" href="<%= manuals_path %>">뷰티 설명서</a>
-            <a class="nav-item nav-link active" href="/custom">맞춤 제품</a>
-            <a class="nav-item nav-link active" href="/ranking/index">제품 랭킹</a>
-            <a class="nav-item nav-link active" href="/shopping/index">스토어</a>
-            <% if user_signed_in? %>
-              <% if current_user && current_user.roles.first.name == 'admin' %>
-                <a class="nav-item nav-link active" href="/products">제품등록</a>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+    <div class="left-box">
+      <div class="left-logo">
+        <img src="<%= asset_path 'mans-logo.png'%>" alt="">
+      </div>
+      <div class="left-my-btn">
+        <% if user_signed_in? %>
+          <ul>
+            <li><a href="/mypouch">나만의 파우치 대쉬보드</a></li>
+            <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        <% elsif %>
+          <ul class="">
+            <li class=""><%= link_to "회원가입", new_user_registration_path %></li>
+            <li class=""><%= link_to "로그인", new_user_session_path %></li>
+          </ul>
+        <% end %>
+      </div>
+      <div class="left-search">
 
+      </div>
+      <div class="left-nav">
+        <ul>
+          <li><a class="" href="<%= manuals_path %>">뷰티 설명서</a></li>
+          <li><a class="" href="/custom">맞춤 제품</a></li>
+          <li><a class="" href="/ranking/index">제품 랭킹</a></li>
+          <li><a class="" href="/shopping/index">스토어</a></li>
+          <% if user_signed_in? %>
+            <% if current_user && current_user.roles.first.name == 'admin' %>
+              <li><a class="nav-item nav-link active" href="/products">제품등록</a></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+      <!-- <div class="left-user">
         <% if user_signed_in? %>
           <ul class="nav navbar-nav navbar-right user-bar">
             <li class="nav-item"><%= link_to "MyPouch", "/mypouch", class: "nav-link" %></li>
@@ -43,14 +57,15 @@
             <li class="nav-item"><%= link_to "로그인", new_user_session_path, class: "nav-link" %></li>
           </ul>
         <% end %>
-      </div>
-    </nav>
+      </div> -->
+    </div>
 
-    <div class="container app-container">
+    <div class="main-container">
+      <img src="<%= asset_path 'mans-logo.png'%>" alt="" class="deco-img">
       <%= yield %>
     </div>
 
-    <footer>
+    <!-- <footer>
       <div class="container d-flex align-items-center">
         <div style="width: 100%; height: auto;">
           <div class="footer-box1 d-flex justify-content-center">
@@ -74,6 +89,6 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
   </body>
 </html>

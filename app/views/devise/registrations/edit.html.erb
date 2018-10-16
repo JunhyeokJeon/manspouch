@@ -9,6 +9,15 @@
       <%= f.input :nickname, required: true, autofocus: true, input_html: { autocomplete: "off" } %>
       <%= f.input :phone, required: true, autofocus: true, placeholder: "010-xxxx-xxxx", class: "password-color", input_html: { autocomplete: "off" } %>
 
+      <div class="field">
+        <%= f.label "직업" %>
+        <%= f.select( :job, ['대학생', '고등학생', '영업직', '비즈니스맨'], {}, { :class => 'form-control input-select'}) %>
+      </div>
+      <div class="field" style="margin-left:20px;">
+        <%= f.label "나이" %>
+        <%= f.select( :age, ['10대', '20대초반', '20대후반', '30대초반', '30대후반', '40대이상'],  {}, { :class => 'form-control input-select'}) %>
+      </div>
+
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>

@@ -9,12 +9,16 @@ task :add_users => [:environment] do
   phone = ['010-2323-2323', '010-7323-1113', '010-9003-2323', '010-1723-2543', '010-1003-4823', '010-2236-4829']
   usertpye = ['무관심형', '피부기초케어형', '피부심화케어형', '적극적화장형', '아이돌형']
   skintype = ['건성', '일반형', '지성', '복함성', '민감성']
+  age = ['10대', '20대초반', '20대후반', '30대초반', '30대후반', '40대이상']
+  job = ['비즈니스맨', '대학생', '취준생', '회사원', '변호사', '백수']
   (1..10).each do
   pass = Faker::Internet.password(8)
     User.create({
       :email => Faker::Internet.email,
       :nickname => Faker::Internet.user_name(5..8),
       :phone => phone.sample,
+      :job => job.sample,
+      :age => age.sample,
       :password => pass,
       :password_confirmation => pass
       })

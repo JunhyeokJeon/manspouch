@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+
+/* left-box */
+
+body { background: #fafafa; }
+.left-box {
+  position: fixed;
+  left: 0;
+  height: 100%;
+  width: 240px;
+  padding: 30px;
+  background: #fff;
+  border-right: 1px solid #efefef;
+}
+.left-logo img { width: 80%; margin: 0 auto; }
+.left-my-btn {
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
+  width: 90%;
+  margin: 0 auto;
+}
+.left-nav {
+  position: relative;
+}
+.left-user {
+  position: relative;
+}
+
+/* main-container */
+.main-container {
+  margin-left: 300px;
+  padding: 30px;
+}
+.deco-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

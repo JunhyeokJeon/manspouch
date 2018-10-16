@@ -2,9 +2,7 @@ class ManualsController < ApplicationController
   before_action :set_manual, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :log_impression, :only=> [:show]
   # before_action :authenticate_user!
-  load_and_authorize_resource
-
-
+  # load_and_authorize_resource
 
   def log_impression
     @hit_manual = Manual.find(params[:id])

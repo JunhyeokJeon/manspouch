@@ -1,5 +1,7 @@
 
-<div id="carouselExampleControls" class="carousel slide main-banner-wrap" data-ride="carousel">
+
+
+<!-- <div id="carouselExampleControls" class="carousel slide main-banner-wWrap" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <%= link_to image_tag("banner1.png", :class => "banner-img d-block w-100"), root_path, class: "banner-a" %>
@@ -70,18 +72,7 @@
             <a href="<%= manual_path(manual) %>">
               <div class="card-bottom manual-card-bottom">
                 <p>
-                  <strong>관련도</strong>
-                  <% manual_menu = [manual.atopy, manual.pimple, manual.allergy, manual.bb, manual.lip, manual.eyebrow, manual.eyeline] %>
-                  <% box =['atopy', 'pimple', 'allergy', 'bb', 'lip', 'eyebrow', 'eyeline'] %>
-                  <% key = 0 %>
-                  <% manual_menu.each do |menu| %>
-                    <% if menu == true %>
-                      <span class="badge badge-info" style="height:20px; margin-left:5px;">
-                      <%= box[key] %>
-                      </span>
-                      <% key = key + 1 %>
-                    <% end %>
-                  <% end %>
+
                 </p>
               </div>
             </a>
@@ -113,18 +104,7 @@
             <a href="<%= product_path(product) %>">
               <div class="card-bottom manual-card-bottom">
                 <p>
-                  <strong>관련도</strong>
-                  <% product_menu = [product.atopy, product.pimple, product.allergy, product.bb, product.lip, product.eyebrow, product.eyeline] %>
-                  <% box =['atopy', 'pimple', 'allergy', 'bb', 'lip', 'eyebrow', 'eyeline'] %>
-                  <% key = 0 %>
-                  <% product_menu.each do |menu| %>
-                    <% if menu == true %>
-                      <span class="badge badge-info" style="height:20px; margin-left:5px;">
-                      <%= box[key] %>
-                      </span>
-                      <% key = key + 1 %>
-                    <% end %>
-                  <% end %>
+
                 </p>
               </div>
             </a>
@@ -162,4 +142,4 @@
   new numberCounter("reviews", <%= @reviews_all.count %>);
   new numberCounter("products", <%= @products_all.count %>);
   new numberCounter("manuals", <%= @manuals_all.count %>);
-</script>
+</script> -->

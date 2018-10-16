@@ -18,11 +18,11 @@
     </div>
     <div class="field">
       <%= f.label :title %>
-      <%= f.text_field :title ,class: "form-control input-text", style: "width: 100%;"%>
+      <%= f.text_field :title ,class: "form-control input-text"%>
     </div>
     <div class="field">
-      <p style="margin-top:0">썸네일 이미지 </p>
-      <p style="margin-top:15px;"><%= f.file_field :image %></p>
+      <p >썸네일 이미지 </p>
+      <p ><%= f.file_field :image %></p>
     </div>
   </div>
 
@@ -33,17 +33,17 @@
 
   <div class="d-flex justify-content-start new-form-line">
     <div class="field">
-      <%= f.label :job %>
+      <%= f.label "직업" %>
       <%= f.select( :job, ['대학생', '고등학생', '영업직', '비즈니스맨'], {}, { :class => 'form-control input-select'}) %>
     </div>
-    <div class="field" style="margin-left:20px;">
-      <%= f.label :age %>
+    <div class="field">
+      <%= f.label "나이" %>
       <%= f.select( :age, ['10대', '20대초반', '20대후반', '30대초반', '30대후반', '40대이상'],  {}, { :class => 'form-control input-select'}) %>
     </div>
   </div>
 
   <h3>사용자 유형</h3>
-  <div class="d-flex justify-content-start new-form-line" style="margin: 10px 0;">
+  <div class="d-flex justify-content-start new-form-line">
     <div class="field">
       <%= f.label "무관심형" %>
       <%= f.check_box :notcare, class: "spec-detail" %>
@@ -67,7 +67,7 @@
   </div>
 
   <h3>피부 타입 점수</h3>
-  <div class="d-flex justify-content-start new-form-line" style="margin: 10px 0;">
+  <div class="d-flex justify-content-start new-form-line">
     <div class="field">
       <%= f.label "건성" %>
       <%= f.number_field :dry, class: "spec-detail" %>
@@ -92,7 +92,7 @@
 
 
   <h3>피부 타입</h3>
-  <div class="d-flex justify-content-start new-form-line" style="margin: 10px 0;">
+  <div class="d-flex justify-content-start new-form-line">
     <div class="field">
       <%= f.label "건성" %>
       <%= f.check_box :dryb, class: "spec-detail" %>
@@ -116,7 +116,7 @@
   </div>
 
   <h3>피부 특성</h3>
-  <div class="d-flex justify-content-start new-form-line" style="margin: 10px 0;">
+  <div class="d-flex justify-content-start new-form-line">
     <div class="field">
       <%= f.label "주름" %>
       <%= f.check_box :wrinkle, class: "spec-detail" %>
@@ -192,9 +192,9 @@
   </div>
 
   <div align="center">
-    <div class="actions" style="margin: 20px 0px;">
-      <%= f.submit "작성", class:"btn btn-secondary", style:"margin-right: 10px;" %>
-      <%= link_to '취소', manuals_path, class:"btn btn-secondary", style:"margin-left: 10px;" %>
+    <div class="actions">
+      <%= f.submit "작성", class:"btn btn-secondary" %>
+      <%= link_to '취소', manuals_path, class:"btn btn-secondary" %>
     </div>
   </div>
 <% end %>
