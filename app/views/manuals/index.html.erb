@@ -47,9 +47,16 @@
           <%= time_ago_in_words(manual.created_at) %> 전
         </span>
 
-        <%= link_to like_manual_path(manual), method: :put do %>
-          <img style="height:25px;" src="https://www.publicdomainpictures.net/pictures/40000/velka/red-heart-1362916005N5Z.jpg"></img>
-          <span class="m-like-c"><%= manual.get_upvotes.size %></span>
+        <% if user_signed_in? %>
+          <%= link_to like_manual_path(manual), method: :put do %>
+            <img style="height:25px;" src="https://www.publicdomainpictures.net/pictures/40000/velka/red-heart-1362916005N5Z.jpg"></img>
+            <span class="m-like-c"><%= manual.get_upvotes.size %></span>
+          <% end %>
+        <% elsif %>
+          <%= link_to new_user_session_path do %>
+            <img style="height:25px;" src="https://www.publicdomainpictures.net/pictures/40000/velka/red-heart-1362916005N5Z.jpg"></img>
+            <span class="m-like-c"><%= manual.get_upvotes.size %></span>
+          <% end %>
         <% end %>
       </div>
     </div>

@@ -14,7 +14,7 @@
       <div class="m-img-box">
         <p class="m-a-t-b"><%= manual.name %></p>
         <p class="m-a-t-b2"></p>
-        <%= link_to image_tag(manual.image.url(:thumb)), manual_path(manual) %>
+        <%= link_to image_tag(manual.image.url(:thumb)), product_path(manual) %>
       </div>
       <%
         a = ['dryb', 'normalb', 'oilyb', 'complexb', 'sensitiveb']

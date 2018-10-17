@@ -1,14 +1,13 @@
 class ManualsController < ApplicationController
   before_action :set_manual, only: [:show, :edit, :update, :destroy, :upvote]
-  before_action :log_impression, :only=> [:show]
+  # before_action :log_impression, :only=> [:show]
   # before_action :authenticate_user!
-  # load_and_authorize_resource
+  load_and_authorize_resource
 
-  def log_impression
-    @hit_manual = Manual.find(params[:id])
-    # this assumes you have a current_user method in your authentication system
-    @hit_manual.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
-  end
+  # def log_impression
+  #   @hit_manual = Manual.find(params[:id])
+  #   @hit_manual.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
+  # end
 
   def index
     @manuals = Manual.all
@@ -28,7 +27,7 @@ class ManualsController < ApplicationController
   def show
     @users = User.all
     @manual = Manual.find params[:id]
-    impressionist(@manual)
+    # impressionist(@manual)
   end
 
   def new
