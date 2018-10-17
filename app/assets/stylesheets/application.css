@@ -15,9 +15,16 @@
  */
 
 /* left-box */
+.sos-me {
+  font-size: 20px;
+  letter-spacing: -2px;
+  color: #333;
+} .aaaaaaa { color: hotpink; } .aaaaaaa:hover { color: blue; }
+
 
 body { background: #fafafa; }
 .left-box {
+  z-index: 100;
   position: fixed;
   left: 0;
   height: 100%;

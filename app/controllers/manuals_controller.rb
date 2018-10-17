@@ -2,6 +2,7 @@ class ManualsController < ApplicationController
   before_action :set_manual, only: [:show, :edit, :update, :destroy, :upvote]
   # before_action :log_impression, :only=> [:show]
   before_action :authenticate_user!, only: [:new, :edit]
+  before_action :load_and_authorize_resource, only: [:new, :edit]
 
 
   # def log_impression

@@ -13,6 +13,7 @@ class CustomController < ApplicationController
 
   def index
     @products = Product.all
+    types(@products)
     # if current_user.userspec
     #   @products = Product.all
     #   sorting(@products)
@@ -31,6 +32,52 @@ class CustomController < ApplicationController
   #     @products = @products.order("created_at DESC")
   #   end
   # end
+
+
+
+  def types(products)
+    @userspec = Userspec.where(user: current_user)
+    cutype = ''
+    i = 0
+    if @userspec[i].usertype == '무관심형'
+      cutype = 'notcare'
+    elsif @userspec[i].usertype == '기초케어형'
+      cutype = 'basecare'
+    elsif @userspec[i].usertype == '심화케어형'
+      cutype = 'hardcare'
+    elsif @userspec[i].usertype == '적극적화장형'
+      cutype = 'beautyman'
+    elsif @userspec[i].usertype == '아이돌형'
+      cutype = 'idol'
+    end
+
+    @products_s = []
+    products.each do |product|
+      if product[cutype] == true
+        @products_s << product
+      end
+    end
+
+    @products = []
+    stype = ''
+    if @userspec[i].skintype == '건성'
+      stype = 'dryb'
+    elsif @userspec[i].skintype == '일반'
+      stype = 'normalb'
+    elsif @userspec[i].skintype == '지성'
+      stype = 'oilyb'
+    elsif @userspec[i].skintype == '복합성'
+      stype = 'complexb'
+    elsif @userspec[i].skintype == '민감성'
+      stype = 'sensitiveb'
+    end
+
+    @products_s.each do |product|
+      if product[stype] == true
+        @products << product
+      end
+    end
+  end
 
   def rating_avr(product)
     # 제품의 리뷰 배열(reviews)에 저장
@@ -54,11 +101,16 @@ class CustomController < ApplicationController
     end
   end
 
+  # 현재 사용중이지 않음
   def sorting(products)
     @us = current_user.userspec
     @products = products
     @productArray = Array.new(@products.count){Array.new(2)}
-    keys = ['skintype', 'age', 'atopy', 'pimple', 'allergy', 'bb', 'lip', 'eyebrow', 'eyeline', 'color', 'skincolor']
+    keys = ['wrinkle', 'sebum', 'stain', 'bigpore',
+            'down', 'pimple', 'skindry', 'eruption',
+            'deadcell', 'freckle', 'dark', 'hairpimple',
+            'haircell', 'hairlose', 'bodypimple', 'bodycell',
+            'bodydry']
     arrayIndex = 0
 
     # 제품스펙과 유저스펙 비교
@@ -66,7 +118,7 @@ class CustomController < ApplicationController
       @productArray[arrayIndex][1] = product.id
       @productArray[arrayIndex][0] = 0
 
-      for i in 0..10
+      for i in 0..15
         if @us[keys[i]]
           if @us[keys[i]] == product[keys[i]]
             @productArray[arrayIndex][0] += 1

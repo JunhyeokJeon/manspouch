@@ -44,7 +44,13 @@
       <div class="left-nav">
         <ul>
           <li><a class="" href="<%= manuals_path %>">뷰티 설명서</a></li>
-          <li><a class="" href="/custom">맞춤 제품</a></li>
+          <% if user_signed_in? && (current_user.userspec != nil) %>
+            <li><a class="" href="/custom">맞춤 제품</a></li>
+          <% elsif user_signed_in? %>
+            <li><a class="" href="/mypouch">맞춤 제품</a></li>
+          <% elsif %>
+            <li><a class="" href="<%= new_user_session_path %>">맞춤 제품</a></li>
+          <% end %>
           <li><a class="" href="/ranking/index">제품 랭킹</a></li>
           <li><a class="" href="/shopping/index">스토어</a></li>
           <% if user_signed_in? %>
@@ -57,11 +63,13 @@
     </div>
 
     <div class="main-container">
-      <img src="<%= asset_path 'mans-logo.png'%>" alt="" class="deco-img">
+      <img src="" alt="" class="deco-img">
       <%= yield %>
     </div>
 
-    <!-- <footer>
+    <!--
+    <%= asset_path 'mans-logo.png'%>
+    <footer>
       <div class="container d-flex align-items-center">
         <div style="width: 100%; height: auto;">
           <div class="footer-box1 d-flex justify-content-center">
