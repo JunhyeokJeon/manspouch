@@ -17,6 +17,16 @@
     border-radius: 20px;
     background: rgba(255,255,255,0.9);
 }
+.users-signin{
+    margin:0 auto;
+    width:400px;
+    height:100%;
+    overflow: hidden;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.9);
+    margin-bottom: 50px;
+}
 
 .user1_1{
     font-size:2em;
@@ -81,4 +91,31 @@
     border:0;
     float: left;
 
+}
+.form-signinput{
+    .form-group{
+        .form-control{
+            height:30px;
+            width:400px;
+
+        }
+        .form-control-label{
+            display:block;
+            margin-top:20px;
+
+        }
+        .invalid-feedback{
+            color:#fc3a52;
+        }
+    }
+    .regi-submit-btn{
+        width:400px;
+        margin-left:0;
+        margin-top:50px;
+    }
+}
+
+.field > .string{
+    display:block;
+    margin-top:20px;
 }
