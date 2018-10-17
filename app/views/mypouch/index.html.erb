@@ -106,7 +106,7 @@ $(document).ready(function(){
 </div>
 <div class="m_top3">
   <div class="m_3" >
-    <p>뷰티 설명서 <span class="btn_mmore">더보기</span></p>
+    <p class="m_3_p">뷰티 설명서 <span class="btn_mmore">더보기</span></p>
     <div class="m_3_in">
       <% @manuals.each do |manual| %>
         <div class="m_3_in_w">
@@ -114,7 +114,25 @@ $(document).ready(function(){
             <%= link_to image_tag(manual.image.url(:thumb)), manual_path(manual) %>
           </div>
           <div class="m_3_in_t">
-            a
+            <p class="m_t_t"><%= manual.title %></p>
+            <p class="m_t_t2">
+              <%
+                box = ['주름', '피지', '잡티', '모공', '탄력저하', '아토피', '여드름',
+                       '건조', '뾰루지', '각질', '기미', '다크써클', '두피여드름', '두피각질',
+                       '탈모', '바디여드름', '바디각질', '바디건조']
+                key = ['wrinkle', 'sebum', 'stain', 'bigpore', 'down', 'atopy', 'pimple',
+                       'skindry', 'eruption', 'deadcell', 'freckle', 'dark', 'hairpimple',
+                       'haircell', 'hairlose', 'bodypimple', 'bodycell', 'bodydry']
+                i = 0
+                color = [ "#80d4f6", "#ffda8e", "#f1bbba", "#f8ecc9" ]
+              %>
+              <% key.each do |k| %>
+                <% if manual[k] == true %>
+                  <span class="m_t_s" style="background: <%= color.sample %>"><%= box[i] %></span>
+                <% end %>
+                <% i += 1 %>
+              <% end %>
+            </p>
           </div>
         </div>
       <% end %>
@@ -125,7 +143,47 @@ $(document).ready(function(){
 
   </div>
   <div class="m_3">
-    <p>맞춤 제품 <span class="btn_mmore">더보기</span></p>
+    <p class="m_3_p">맞춤 제품 <span class="btn_mmore">더보기</span></p>
+    <div class="m_3c">
+      <% @products.each do |product| %>
+        <div class="m_c_b">
+          <div class="m_c_img">
+            <%= link_to image_tag(product.image.url(:thumb)), product_path(product) %>
+          </div>
+          <div class="m_c_tb">
+            <span style="color: #555">브랜드 :</span>&nbsp<span><%= product.brand %></span><br>
+            <span style="color: darkblue; font-size: 1.2em;"><%= product.name %></span>
+          </div>
+          <div class="m_c_tb2">
+            <%
+              a = ['dryb', 'normalb', 'oilyb', 'complexb', 'sensitiveb']
+              b = ['건성', '일반', '지성', '복합성', '민감성']
+              type = ""
+              for i in 0..4
+                if product[a[i]] == true
+                  type = b[i]
+                end
+              end
+            %>
+            <span class="m_t_s2" style="background: hotpink;"><%= type %></span>
+          </div>
+          <div class="m_c_tb3">
+            <%
+              pr = product.price.to_s
+              rpr = ""
+              if pr.length == 4
+                rpr = pr[0] + "," + pr[1..3]
+              elsif pr.length == 5
+                rpr = pr[0..1] + "," + pr[2..4]
+              elsif pr.length == 6
+                rpr = pr[0..2] + "," + pr[3..5]
+              end
+            %>
+            <span><%= rpr %></span>&nbsp<span style="font-size: 24px;">₩</span>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 
 </div>
