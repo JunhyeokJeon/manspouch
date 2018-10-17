@@ -1,12 +1,64 @@
 <div class="manu_top1">
   <span class="manu_t1">뷰티 설명서</span><br>
-  <span class="manu_t2">모두 ∙ 피부 ∙ 화장 ∙ 바디 ∙ 헤어</span>
+  <ul>
+    <li class="manu_t2"><a class="" href="<%= manuals_path %>">All&nbsp ∙ &nbsp</a></li>
+    <li class="manu_t2"><a class="" href="/manuals/category/<%= '피부' %>">피부&nbsp ∙ &nbsp</a></li>
+    <li class="manu_t2"><a class="" href="/manuals/category/<%= '화장' %>">화장&nbsp ∙ &nbsp</a></li>
+    <li class="manu_t2"><a class="" href="/manuals/category/<%= '바디' %>">바디&nbsp ∙ &nbsp</a></li>
+    <li class="manu_t2"><a class="" href="/manuals/category/<%= '헤어' %>">헤어</a></li>
+  </ul>
 </div>
 <div class="item-container">
-  <div class="item-each"></div>
-  <div class="item-each"></div>
-  <div class="item-each"></div>
-  <div class="item-each"></div>
-  <div class="item-each"></div>
-  <div class="item-each"></div>
+  <% @manuals.each do |manual| %>
+    <div class="item-each">
+      <div class="m-img-box">
+        <p class="m-a-t-b"><%= manual.title %></p>
+        <p class="m-a-t-b2"></p>
+        <%= link_to image_tag(manual.image.url(:thumb)), manual_path(manual) %>
+      </div>
+      <%
+        a = ['dryb', 'normalb', 'oilyb', 'complexb', 'sensitiveb']
+        b = ['건성', '일반', '지성', '복합성', '민감성']
+        type1 = ""
+        for i in 0..4
+          if manual[a[i]] == true
+            type1 = b[i]
+          end
+        end
+      %>
+      <%
+        c = ['notcare', 'basecare', 'hardcare', 'beautyman', 'idol']
+        d = ['무관심형', '기초케어형', '심화케어형', '적극적화장형', '아이돌형']
+        type2 = ""
+        for i in 0..4
+          if manual[c[i]] == true
+            type2 = d[i]
+          end
+        end
+      %>
+
+      <div class="m-box3">
+        <span class="m-box3-s"><%= type1 %></span>&nbsp
+        <span class="m-box3-s"><%= type2 %></span>
+      </div>
+
+      <div class="m-box2">
+        <span class="m-time">
+          <%= time_ago_in_words(manual.created_at) %> 전
+        </span>
+
+        <% if user_signed_in? %>
+          <%= link_to like_manual_path(manual), method: :put do %>
+            <img style="height:25px;" src="https://www.publicdomainpictures.net/pictures/40000/velka/red-heart-1362916005N5Z.jpg"></img>
+            <span class="m-like-c"><%= manual.get_upvotes.size %></span>
+          <% end %>
+        <% elsif %>
+          <%= link_to new_user_session_path do %>
+            <img style="height:25px;" src="https://www.publicdomainpictures.net/pictures/40000/velka/red-heart-1362916005N5Z.jpg"></img>
+            <span class="m-like-c"><%= manual.get_upvotes.size %></span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>>
 </div>

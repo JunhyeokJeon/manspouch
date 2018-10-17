@@ -12,6 +12,7 @@ class CustomController < ApplicationController
   end
 
   def index
+    @products = Product.all
     # if current_user.userspec
     #   @products = Product.all
     #   sorting(@products)

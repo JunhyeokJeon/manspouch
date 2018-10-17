@@ -25,7 +25,7 @@ class MypouchController < ApplicationController
         end
       end
 
-      @products = @products[0..1]
+      @products = @products_a[0..1]
     elsif
       @products = Product.all
       @products = @products[0..1]

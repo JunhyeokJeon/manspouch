@@ -45,7 +45,8 @@ task :add_products => [:environment] do
                     :pimple => bool.sample, :skindry => bool.sample, :eruption => bool.sample,
                     :deadcell => bool.sample, :freckle => bool.sample, :dark => bool.sample,
                     :hairpimple => bool.sample, :haircell => bool.sample, :hairlose => bool.sample,
-                    :bodypimple => bool.sample, :bodycell => bool.sample, :bodydry => bool.sample
+                    :bodypimple => bool.sample, :bodycell => bool.sample, :bodydry => bool.sample,
+                    :notcare => bool.sample, :basecare => bool.sample, :hardcare => bool.sample, :beautyman => bool.sample, :idol => bool.sample
                     })
   end
 end
@@ -70,7 +71,8 @@ task :add_manuals => [:environment] do
                    :pimple => bool.sample, :skindry => bool.sample, :eruption => bool.sample,
                    :deadcell => bool.sample, :freckle => bool.sample, :dark => bool.sample,
                    :hairpimple => bool.sample, :haircell => bool.sample, :hairlose => bool.sample,
-                   :bodypimple => bool.sample, :bodycell => bool.sample, :bodydry => bool.sample
+                   :bodypimple => bool.sample, :bodycell => bool.sample, :bodydry => bool.sample,
+                   :notcare => bool.sample, :basecare => bool.sample, :hardcare => bool.sample, :beautyman => bool.sample, :idol => bool.sample
                    })
   end
 end
