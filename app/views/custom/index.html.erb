@@ -1,2 +1,50 @@
-<%= render "header" %>
-<%= render "article" %>
+<div class="manu_top1">
+  <span class="manu_t1">맞춤 제품</span><br>
+  <!-- <ul>
+    <li class="manu_t2"><a class="" href="<%= manuals_path %>">All&nbsp ∙ &nbsp</a></li>
+    <li class="manu_t2"><a class="" href="/manuals/category/<%= '피부' %>">피부&nbsp ∙ &nbsp</a></li>
+    <li class="manu_t2"><a class="" href="/manuals/category/<%= '화장' %>">화장&nbsp ∙ &nbsp</a></li>
+    <li class="manu_t2"><a class="" href="/manuals/category/<%= '바디' %>">바디&nbsp ∙ &nbsp</a></li>
+    <li class="manu_t2"><a class="" href="/manuals/category/<%= '헤어' %>">헤어</a></li>
+  </ul> -->
+</div>
+<div class="item-container">
+  <% @products.each do |manual| %>
+    <div class="item-each">
+      <div class="m-img-box">
+        <p class="m-a-t-b"><%= manual.name %></p>
+        <p class="m-a-t-b2"></p>
+        <%= link_to image_tag(manual.image.url(:thumb)), manual_path(manual) %>
+      </div>
+      <%
+        a = ['dryb', 'normalb', 'oilyb', 'complexb', 'sensitiveb']
+        b = ['건성', '일반', '지성', '복합성', '민감성']
+        type1 = ""
+        for i in 0..4
+          if manual[a[i]] == true
+            type1 = b[i]
+          end
+        end
+      %>
+      <%
+        c = ['notcare', 'basecare', 'hardcare', 'beautyman', 'idol']
+        d = ['무관심형', '기초케어형', '심화케어형', '적극적화장형', '아이돌형']
+        type2 = ""
+        for i in 0..4
+          if manual[c[i]] == true
+            type2 = d[i]
+          end
+        end
+      %>
+
+      <div class="m-box3">
+        <span class="m-box3-s"><%= type1 %></span>&nbsp
+        <span class="m-box3-s"><%= type2 %></span>
+      </div>
+
+      <div class="m-box2-n">
+        <span>브랜드</span>&nbsp&nbsp<span class="custom-p-b"><%= manual.brand %></span>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -4,12 +4,16 @@
     letter-spacing: -4px;
     font-weight:100;
 }
-.manu_t2{
+.manu_t2 a {
     padding-left:5px;
     font-size:1.7em;
     color:#aaa;
     letter-spacing: -2px;
     font-weight:700;
+}
+.manu_top1 ul {
+  display: flex;
+  justify-content: left;
 }
 
 .item-container{
@@ -20,6 +24,7 @@
     flex-wrap: wrap;
 }
 .item-each{
+    overflow: hidden;
     width:300px;
     height:350px;
     background:#fff;
@@ -27,4 +32,81 @@
     margin:40px 20px;
     border-radius: 30px;
     box-shadow: 0 45px 25px -30px rgba(0,0,0,0.1);
+}
+
+.m-img-box {
+  width: 100%;
+  height: 65%;
+  background: #999;
+
+}
+.m-a-t-b {
+  box-sizing: border-box;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  padding: 13px 15px 13px 15px;
+  display: block;
+  width: 300px;
+  height: 60px;
+  position: absolute;
+  top: 40;
+  left: 40;
+  z-index: 2;
+  font-weight: 700;
+  letter-spacing: -2px;
+  font-size: 20px;
+}
+.m-a-t-b2 {
+  background: #fff;
+  opacity: 0.7;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  position: absolute;
+  width: 300px;
+  height: 60px;
+  z-index: 1;
+}
+.m-img-box img {
+  width: 100%; height: 100%;
+
+}
+
+.m-box2 {
+  height: 10%;
+  padding: 15px 0 10px 5px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.m-box2 a {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+.m-box2 a img {
+  width: 25px;
+}
+.m-like-c {
+  width: 20px;
+  margin-left: 10px;
+}
+.m-time {
+  margin-left: 15px;
+}
+.m-box3 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 18%; border-bottom: 1px solid #fafafa;
+  padding: 10px 20px;
+  text-align: center;
+  line-height: 43px;
+}
+.m-box3-s {
+  font-size: 18px;
+  background: skyblue;
+  padding: 5px 10px;
+  border-radius: 18.5px;
+  color: #fff;
 }
