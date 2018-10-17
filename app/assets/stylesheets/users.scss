@@ -1,1 +1,84 @@
+.users-logback{
+    width:110%;
+    height: 110%;
+    position: fixed;
+    z-index: -1;
+    margin:-120px;
+    background: image-url('login.jpg') no-repeat;
+    background-size:cover;
+    filter: blur(20px);
+}
+.users-login{
+    margin:0 auto;
+    width:410px;
+    height:540px;
+    overflow: hidden;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.9);
+}
 
+.user1_1{
+    font-size:2em;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+.user1_2{
+    font-size:4em;
+    letter-spacing: -8px;
+    margin-bottom: 20px;
+    line-height:80px;
+    font-weight: 100;
+  }
+.form-control{
+    transition: .5s;
+    width:400px;
+    height:50px;
+    border:0;
+    border-bottom:1px solid #ddd;
+    background:rgba(0,0,0,0);
+    font-size:20px;
+    line-height:50px;
+    margin-top:20px;
+}
+.form-control:hover{
+    transition: .5s;
+    border-bottom:1px solid #95c5fc;
+}
+.form-control:focus{
+    outline: none;
+    transition: .5s;
+    border-bottom:1px solid #8958d8;
+}
+.regi-submit-btn{
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height:50px;
+    font-size:20px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    background:#bb9bee;
+    margin:0;
+    margin-left:20px; 
+    padding: 0;
+    width:180px;
+    height:50px;
+    color:white;
+    border:0;
+    border-radius: 50px;
+    float: left;
+}
+.users-join-btn{
+    text-align:center;
+    line-height:50px;
+    font-size:20px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-left:20px;
+    width:180px;
+    height:50px;
+    color:#333;
+    border:0;
+    float: left;
+
+}
