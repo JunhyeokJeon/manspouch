@@ -1,7 +1,7 @@
 <div class="">
   <% @products.each do |product| %>
     <div class="">
-      <h4><%= product.title %></h4>
+      <h4><%= product.name %></h4>
       <p><%= product.category %></p>
       <%= link_to image_tag(product.image.url(:thumb)), product_path(product) %>
     </div>
