@@ -1,6 +1,7 @@
 class MypouchController < ApplicationController
 
   def index
+
     # 현재 사용자의 피부스펙
     if current_user.userspec != nil
       @userspec = Userspec.where(user: current_user)
