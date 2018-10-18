@@ -5,11 +5,11 @@
   </div>
 
   <div class="field">
-    <%= f.text_area :review, class: "rev-txt-ar", autocomplete: "off", autocomplete: "off", id: "exampleFormControlTextarea1", rows: "3" %>
+    <%= f.text_area :review, class: "rev-txt-ar", autocomplete: "off", autocomplete: "off", rows: "3" %>
   </div>
   <%= f.submit "리뷰작성", class:"btn-submit", style:"margin-top:20px;" %>
 <% end %>
-
+  
 <script>
   $('#star-rating').raty({
     path: '/assets',
