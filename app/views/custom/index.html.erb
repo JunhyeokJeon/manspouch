@@ -9,19 +9,19 @@
   </ul> -->
 </div>
 <div class="item-container">
-  <% @products.each do |manual| %>
+  <% @products.each do |product| %>
     <div class="item-each">
       <div class="m-img-box">
-        <p class="m-a-t-b"><%= manual.name %></p>
+        <p class="m-a-t-b"><%= product.name %></p>
         <p class="m-a-t-b2"></p>
-        <%= link_to image_tag(manual.image.url(:thumb)), product_path(manual) %>
+        <%= link_to image_tag(product.image.url(:thumb)), product_path(product) %>
       </div>
       <%
         a = ['dryb', 'normalb', 'oilyb', 'complexb', 'sensitiveb']
         b = ['건성', '일반', '지성', '복합성', '민감성']
         type1 = ""
         for i in 0..4
-          if manual[a[i]] == true
+          if product[a[i]] == true
             type1 = b[i]
           end
         end
@@ -31,7 +31,7 @@
         d = ['무관심형', '기초케어형', '심화케어형', '적극적화장형', '아이돌형']
         type2 = ""
         for i in 0..4
-          if manual[c[i]] == true
+          if product[c[i]] == true
             type2 = d[i]
           end
         end
@@ -43,7 +43,18 @@
       </div>
 
       <div class="m-box2-n">
-        <span>브랜드</span>&nbsp&nbsp<span class="custom-p-b"><%= manual.brand %></span>
+        <%
+          pr = product.price.to_s
+          rpr = ""
+          if pr.length == 4
+            rpr = pr[0] + "," + pr[1..3]
+          elsif pr.length == 5
+            rpr = pr[0..1] + "," + pr[2..4]
+          elsif pr.length == 6
+            rpr = pr[0..2] + "," + pr[3..5]
+          end
+        %>
+        <span>가격</span>&nbsp&nbsp<span class="custom-p-b"><%= rpr %></span>
       </div>
     </div>
   <% end %>

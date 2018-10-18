@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :load_and_authorize_resource, only: [:new, :edit]
+  # before_action :load_and_authorize_resource, only: [:new, :edit]
   before_action :authenticate_user!, only: [:new, :edit]
+  # load_and_authorize_resource
 
   def index
     @products = Product.all
@@ -75,7 +76,8 @@ class ProductsController < ApplicationController
         :notcare, :basecare, :hardcare, :beautyman, :idol,
         :dry, :normal, :oily, :complex, :sensitive,
         :dryb, :normalb, :oilyb, :complexb, :sensitiveb,
-        :wrinkle, :sebum, :stain, :bigpore, :down, :atopy, :pimple, :skindry, :eruption, :deadcell, :freckle, :dark
+        :wrinkle, :sebum, :stain, :bigpore, :down, :atopy, :pimple, :skindry, :eruption, :deadcell, :freckle, :dark,
+        :prul
       )
     end
 end
