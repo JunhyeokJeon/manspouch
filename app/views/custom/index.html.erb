@@ -1,4 +1,4 @@
-<div class="manu_top1">
+<div class="menu_top1">
   <span class="manu_t1">맞춤 제품</span><br>
   <!-- <ul>
     <li class="manu_t2"><a class="" href="<%= manuals_path %>">All&nbsp ∙ &nbsp</a></li>
@@ -9,6 +9,7 @@
   </ul> -->
 </div>
 <div class="item-container">
+
   <% @products.each do |product| %>
     <div class="item-each">
       <div class="m-img-box">
@@ -54,8 +55,10 @@
             rpr = pr[0..2] + "," + pr[3..5]
           end
         %>
+
         <span>가격</span>&nbsp&nbsp<span class="custom-p-b"><%= rpr %></span>
       </div>
     </div>
   <% end %>
+
 </div>

@@ -12,3 +12,85 @@
   font-weight: 700;
   color: darkblue;
 }
+
+.showbox {
+  position:absolute;
+  margin: 0 auto;
+  width: 700px;
+  height: auto;
+  overflow: hidden;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.show-header{
+  position:absolute;
+  margin: 0 auto;
+  width: 600px;
+  height: auto;
+  overflow: hidden;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(224, 255, 255, 0.9);
+}
+.some_img{
+
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-right: auto;
+    margin-left: auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    width:300px;
+    height:300px;
+
+}
+.brand_name {
+    font-size: 1em;
+    letter-spacing: 1px;
+    font-weight: 100;
+    text-align:center;
+}
+
+.pro_name {
+
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    top: 40;
+    left: 40;
+    font-weight: 500;
+    letter-spacing: -2px;
+    font-size: 20px;
+    text-align: center;
+}
+.score{
+  margin: 0 auto;
+  text-align:center;
+  padding:3px;
+}
+.price_tag {
+    font-size: 1em;
+    letter-spacing: 1px;
+    font-weight: 100;
+    text-align:center;
+}
+.btn-submit{
+	font-family: 'Noto Sans KR', sans-serif;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    background: #bb9bee;
+    margin: 0;
+    margin-left: 20px;
+    padding: 0;
+    width: 180px;
+    height: 50px;
+    color: white;
+    border: 0;
+    border-radius: 50px;
+    float: left;
+}

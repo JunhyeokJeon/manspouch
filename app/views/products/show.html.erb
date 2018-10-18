@@ -1,7 +1,64 @@
-<p class="sos-me">
-현재 버전은 데모버전이며, 현재 페이지는 준비중에 있습니다. <br>
-빠른 시간 안에 알파버전으로 찾아뵙겠습니다. 감사합니다.<br>
-<br>
-문의사항이 있으시다면 아래 페이스북 페이지로 문의 부탁드립니다!<br>
-<a class="aaaaaaa" href="https://www.facebook.com/manspouch">https://www.facebook.com/manspouch</a>
-</p>
+
+
+<div class ="showbox">
+	<div class="show-wrap">
+		<div class="some_img">
+			<%= link_to image_tag(@product.image.url(:thumb)), @product %>
+		</div>
+
+        <p class="brand_name"><%= @product.brand %></p>		        
+        <p class="pro_name"><%=@product.name%></p>
+
+
+        <% k = @product.score.floor()  %>		
+		<p class = "score">평점 :
+	        <span style="color: red;"><%= '♥'*k %></span>
+	        <span style="color: #afafaf;"><%= '♥'* (5-k)%></span>
+			<span><%= @product.score %></span>&nbsp&nbsp            
+
+	        (<%= @product.reviews.count %>&nbsp)
+	    </p>
+
+        <p class="price_tag">정가 : <%= @product.price %> 원</h3>
+        <hr>
+
+	  <div class="show-body">
+	    <%= @product.contents.html_safe %>
+	  </div>
+
+	  <hr>
+
+
+
+	  <div class="show-comments" >
+	    <% @product.reviews.each do |r| %>
+	      <div class="comments-line d-flex justify-content-center">
+	        <div class="comments-line-left">
+	          <strong><%= r.user.nickname %></strong>
+	          <!--별선택 했을 때와 안했을 때 댓글 폼의 차이를 주는 함수-->
+	          <% n = r.rating %>
+	          <% if r.rating == nil then %>
+	            <span class="comments-contents"><%= r.review %></span>
+	          <% else %>
+	            <span class="comments-contents"><%= '★'*n %>&nbsp&nbsp|&nbsp&nbsp<%= r.review%></span>
+	          <% end %>
+	        </div>
+	        <% if current_user == r.user %>
+	          <div class="comments-line-middle">
+	            <%= time_ago_in_words(r.created_at) %> 전
+	          </div>
+
+	          <div class="comments-line-right">
+	            <a class="delete-comment" href="<%= product_review_path(@product, r) %>" data-method="delete" data-confirm="정말로 삭제하시겠습니까?">x</a>
+	          </div>
+	        <% else %>
+	          <div class="comments-line-middle comments-line-middle-not">
+	            <%= time_ago_in_words(r.created_at) %> 전
+	          </div>
+	        <% end %>
+	      </div>
+	    <% end %>
+	    <%= render "/reviews/form" %>
+	  </div>
+	</div>
+</div>
