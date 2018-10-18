@@ -35,7 +35,6 @@
   background: rgba(224, 255, 255, 0.9);
 }
 .some_img{
-
 	display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +45,6 @@
     border: 1px solid #ddd;
     width:300px;
     height:300px;
-
 }
 .brand_name {
     font-size: 1em;
@@ -56,7 +54,6 @@
 }
 
 .pro_name {
-
     border-top-left-radius: 28px;
     border-top-right-radius: 28px;
     top: 40;
@@ -93,4 +90,20 @@
     border: 0;
     border-radius: 50px;
     float: left;
+}
+.rev-txt-ar {
+  margin-top: 35px;
+  display: block;
+  width: 90%;
+  height: calc(2.25rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  margin-top: 10px;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
