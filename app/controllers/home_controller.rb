@@ -23,11 +23,16 @@ class HomeController < ApplicationController
     end
 
     # @products 재배열
-  	@productArray = @productArray.sort.reverse
-    @products = []
-    for i in 0..(@productArray.length-1)
-      @products << Product.find_by_id(@productArray[i][1])
+    if @productArray != nil
+      @productArray = @productArray.sort.reverse
+      @products = []
+      for i in 0..(@productArray.length-1)
+        @products << Product.find_by_id(@productArray[i][1])
+      end
+    elsif
+      @products = Product.all
     end
+
   end
 
   def rating_avr
