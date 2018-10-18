@@ -2,7 +2,7 @@ Rails.application.configure do
 
   config.serve_static_assets = true
   config.assets.compile = true
-  config.assets.precompile =  ['*.js', '*.css', '*.css.erb'] 
+  Rails.application.config.assets.precompile += %w( *.js ^[^_]*.css *.css.erb )
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
