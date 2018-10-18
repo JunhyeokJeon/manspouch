@@ -1,7 +1,52 @@
-<p class="sos-me">
-현재 버전은 데모버전이며, 현재 페이지는 준비중에 있습니다. <br>
-빠른 시간 안에 알파버전으로 찾아뵙겠습니다. 감사합니다.<br>
-<br>
-문의사항이 있으시다면 아래 페이스북 페이지로 문의 부탁드립니다!<br>
-<a class="aaaaaaa" href="https://www.facebook.com/manspouch">https://www.facebook.com/manspouch</a>
-</p>
+<div>
+  <span class="manu_t1">뷰티 설명서</span>
+</div>
+
+<div class="sh-wrap">
+  <p class="sh-m-t1"><span class="sh-m-user"><span style='color:#555;'>Writing by</span> <%= @manual.user.nickname %></span></p>
+  <p class="sh-m-t-a">
+    <span class="sh-m-ca">[<%= @manual.category %>]</span>
+    <span class="sh-m-ti"><%= @manual.title %></span>
+  </p>
+  <p>
+    <span class="sh-m-da" style="color: #888;"><%= @manual.updated_at.strftime("%Y-%m-%d") %></span>
+  </p>
+
+  <div class="sh-md-line"></div>
+
+  <div class="sh-m-con">
+    <%= @manual.content.html_safe %>
+  </div>
+
+  <div class="sh-bt-line"></div>
+
+  <div class="sh-com-box" >
+    <% @manual.comments.each do |c| %>
+
+      <div class="com-in-box">
+        <div class="com-in-box-in1">
+          <p style="margin-bottom: 20px;">
+            <span class="comm-u-ww">Writing by</span>
+            <span class="comm-u-na"><%= c.user.nickname %></span><br>
+            <span class="comm-c-ti"><%= time_ago_in_words(c.created_at) %> 전</span>
+          </p>
+          <p>
+            <%= c.body %>
+          </p>
+        </div>
+
+        <div class="com-in-box-in2">
+          <% if current_user == c.user %>
+            <a class="com-del-btn" href="<%= manual_comment_path(@manual, c) %>" data-method="delete" data-confirm="정말로 삭제하시겠습니까?">
+              Delete
+            </a>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="comm-line"></div>
+    <% end %>
+
+    <%= render "comments/form" %>
+  </div>
+</div>

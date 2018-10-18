@@ -1,6 +1,14 @@
 <%= form_for([@manual, @manual.comments.build], class:"form-inline my-2 my-lg-0") do |f| %>
-  <div class="form-group">
-    <%= f.text_field :body, class: "comments-area form-control", style: "width: 100%; height: 100px;", autocomplete: "off", id: "exampleFormControlTextarea1", rows: "3" %>
+  <div class="">
+    <%= f.text_field :body,
+        class: "comm-text-ar",
+        autocomplete: "off",
+        id: "exampleFormControlTextarea1",
+        rows: "3" %>
   </div>
-  <%= f.submit "댓글작성", class:"btn btn-outline-success" %>
+  <% if user_signed_in? %>
+    <%= f.submit "댓글작성", class:"comm-btn" %>
+  <% elsif %>
+    <a href="<%= new_user_session_path %>" class="comm-btn">댓글작성</a>
+  <% end %>
 <% end %>

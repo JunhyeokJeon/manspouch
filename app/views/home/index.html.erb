@@ -31,6 +31,20 @@
             <div class="swiper-img">
               <%= link_to image_tag(manual.image.url(:thumb)), manual_path(manual) %>
             </div>
+            <div class="swiper-bottom">
+              <div class="sb-fir" style="width: 130px;">
+                <span style="font-size: 16px; color: #555;">카테고리</span>&nbsp&nbsp
+                <span class="ho-m-ca"><%= manual.category %></span>
+              </div>
+              <div class="sb-sec" style="width: 190px;">
+                <% if manual.title.length > 13 %>
+                  <% title = manual.title[0..12]%>
+                  <span style="font-size: 16px;"><%= title %>..</span>
+                <% elsif %>
+                  <span><%= manual.title %></span>
+                <% end %>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>
@@ -43,6 +57,7 @@
     <div class="home-t home-title-2">제품랭킹</div>
     <a href="/ranking/index" class="home-more">더보기</a>
   </div>
+
   <div class="home-article home-rankings">
     <!-- Swiper -->
     <div class="swiper-container">
@@ -53,13 +68,19 @@
               <%= link_to image_tag(product.image.url(:thumb)), product_path(product) %>
             </div>
             <div class="swiper-bottom">
-              <% k = product.score.floor() %>
-              <% k.times do |i|  %>
-                <img class="home-star" src="<%= asset_path 'star.png' %>" alt="">
-              <% end %>
-              <% (5-k).times do |i| %>
-                <img class="home-star" src="<%= asset_path 'star2.png' %>" alt="">
-              <% end %>
+              <div class="sb-fir">
+                <span>브랜드</span>&nbsp&nbsp
+                <span style="font-size: 16px; color: black;"><%= product.brand %></span>
+              </div>
+              <div class="sb-sec">
+                <% k = product.score.floor() %>
+                <% k.times do |i|  %>
+                  <img class="home-star" src="<%= asset_path 'star.png' %>" alt="">
+                <% end %>
+                <% (5-k).times do |i| %>
+                  <img class="home-star" src="<%= asset_path 'star2.png' %>" alt="">
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>

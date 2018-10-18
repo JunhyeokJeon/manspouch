@@ -27,7 +27,6 @@ class ManualsController < ApplicationController
   end
 
   def show
-    @users = User.all
     @manual = Manual.find params[:id]
     # impressionist(@manual)
   end

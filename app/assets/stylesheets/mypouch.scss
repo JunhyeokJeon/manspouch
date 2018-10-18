@@ -89,15 +89,15 @@
 
         .m_3_in_img {
           background: #fff;
-          width: 160px;
-          height: 120px;
+          width: 140px;
+          height: 105px;
           overflow: hidden;
           position: relative;
-          // padding-right: 70px;
           a {
+            width: 100%;
             img {
               position: absolute;
-              width: 100%;
+              width: 140px;
               height: 100%;
             }
           }
@@ -105,7 +105,7 @@
 
         .m_3_in_t {
           padding: 0 15px 10px 15px;
-          width: 630px;
+          width: 460px;
           font-size: 12px;
           .m_t_t {
             margin-bottom: 5px;

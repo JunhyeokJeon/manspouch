@@ -1,4 +1,4 @@
-
+/* index */
 .manu_t1{
     font-size:4em;
     letter-spacing: -4px;
@@ -110,3 +110,107 @@
   border-radius: 18.5px;
   color: #fff;
 }
+
+/* show */
+.sh-wrap { margin-top: 40px; padding-right: 100px; }
+.sh-m-t1 { margin-bottom: 10px; }
+.sh-m-t-a {
+  font-size: 28px;
+  font-weight: 400;
+
+}
+.sh-m-user { font-size: 18px; color: #9BD8FF; }
+.sh-m-ca { }
+.sh-md-line {
+  width: 100%;
+  border-bottom: 2px solid #efefef;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.sh-m-con {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.sh-bt-line {
+  border-bottom: 2px solid #efefef;
+  margin-bottom: 40px;
+  width: 100%;
+}
+.sh-com-box {
+  width: 100%;
+}
+.comm-btn {
+  display: block;
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height:40px;
+  font-size:20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background:#bb9bee;
+  padding: 0;
+  width:150px;
+  height:40px;
+  color:white;
+  border:0;
+  border-radius: 50px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+} .comm-btn:hover { opacity: 0.5; }
+.comm-text-ar {
+  margin-top: 35px;
+  display: block;
+  width: 70%;
+  height: calc(2.25rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.com-in-box { width: 75%; display: flex; justify-content: left; }
+.com-in-box-in1 { width: 700px; }
+.com-in-box-in2 { width: 150px; }
+.comm-u-ww {
+  color: #555;
+  font-size: 16px;
+  font-weight: 500;
+}
+.comm-u-na {
+  color: #6BB4DC;
+  font-size: 16px;
+  font-weight: 500;
+}
+.comm-c-ti {
+  font-size: 14px;
+  font-weight: 100;
+  color: #888;
+}
+.comm-line {
+  width: 75%;
+  border-bottom: 2px solid #efefef;
+  margin: 20px 0;
+}
+.com-del-btn {
+  display: block;
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height:30px;
+  font-size:18px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  background:#bb9bee;
+  width: 80px;
+  height: 30px;
+  color:white;
+  border:0;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+} .com-del-btn:hover { opacity: 0.5; }

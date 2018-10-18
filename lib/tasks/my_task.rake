@@ -33,12 +33,13 @@ task :add_products => [:environment] do
   price = [20000, 30000, 31000, 15600, 23000, 22200, 34000, 65300, 20500, 8000, 9000, 8500, 31000, 153000, 2000, 15200 ]
   bool = [true, false]
   skincolor = [1,2,3,4,5,6,7,8,9,10,22,21,23,24,25,14,15,16,17,18]
-
+  userid = [1,2,3,4,5,6,7]
   (1..20).each do
     Product.create({:category => category.sample, :age => age.sample, :job => job.sample,
                     :brand => Faker::Lorem.word, :name => Faker::Lorem.word, :price => price.sample,
                     :image => File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample),
                     :contents => Faker::Lorem.paragraph,
+                    :user_id => userid.sample,
                     :dryb => bool.sample, :normalb => bool.sample, :oilyb => bool.sample, :complexb => bool.sample, :sensitiveb => bool.sample,
                     :wrinkle => bool.sample, :sebum => bool.sample, :stain => bool.sample,
                     :bigpore => bool.sample, :down => bool.sample, :atopy => bool.sample,
@@ -59,12 +60,14 @@ task :add_manuals => [:environment] do
   price = [20000, 30000, 31000, 15600, 23000, 22200, 34000, 65300, 20500, 8000, 9000, 8500, 31000, 153000, 2000, 15200 ]
   bool = [true, false]
   skincolor = [1,2,3,4,5,6,7,8,9,10,22,21,23,24,25,14,15,16,17,18]
+  userid = [1,2,3,4,5,6,7]
 
   (1..20).each do
     Manual.create({:category => category.sample, :title => Faker::Lorem.word,
                    :image => File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample),
                    :content => Faker::Lorem.paragraph,
                    :job => job.sample, :age => age.sample,
+                   :user_id => userid.sample,
                    :dryb => bool.sample, :normalb => bool.sample, :oilyb => bool.sample, :complexb => bool.sample, :sensitiveb => bool.sample,
                    :wrinkle => bool.sample, :sebum => bool.sample, :stain => bool.sample,
                    :bigpore => bool.sample, :down => bool.sample, :atopy => bool.sample,
