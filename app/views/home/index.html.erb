@@ -7,7 +7,11 @@
     <p>남자를 위한 나만의 화장품, 이제 AI분석을 통한<br>맞춤형 화장품을 만나보세요.</p>
   </div>
   <div class="home-inner-box survey-btn">
-    <a href="/mypouch" class="inner-btn">지금 분석하기</a>
+    <% if user_signed_in? %>
+      <a href="/mypouch" class="inner-btn">지금 분석하기</a>
+    <% elsif %>
+      <a href="<%= new_user_session_path %>" class="inner-btn">지금 분석하기</a>
+    <% end %>
   </div>
 </div>
 
