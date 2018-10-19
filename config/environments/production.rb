@@ -19,6 +19,9 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
+  #fallback
+  config.server_static_assets = false
+  
   # Compress JavaScripts and CSS.
   config.assets.css_compressor = :yui
   config.assets.js_compressor = :uglifier
