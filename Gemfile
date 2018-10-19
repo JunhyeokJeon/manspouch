@@ -19,7 +19,7 @@ gem 'faker'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'impressionist'
-gem 'rails_db'
+# gem 'rails_db'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.7'
