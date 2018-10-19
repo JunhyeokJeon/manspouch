@@ -3,11 +3,21 @@
 </div>
 
 <div class="sh-wrap">
-  <p class="sh-m-t1"><span class="sh-m-user"><span style='color:#555;'>Writing by</span> <%= @manual.user.nickname %></span></p>
+
   <p class="sh-m-t-a">
     <span class="sh-m-ca">[<%= @manual.category %>]</span>
     <span class="sh-m-ti"><%= @manual.title %></span>
+
   </p>
+  <%if current_user && current_user.roles.first.name == 'admin' %>
+    <a class="com-del-btn" href="<%= manual_path(@manual) %>" data-method="delete" data-confirm="정말로 삭제하시겠습니까?">
+                Delete
+    </a>
+    <a class="com-del-btn" href="<%= edit_manual_path(@manual) %>" data-method="get" data-confirm="수정하시겠습니까?">
+                Edit
+  </a>
+  <% end %>
+
   <p>
     <span class="sh-m-da" style="color: #888;"><%= @manual.updated_at.strftime("%Y-%m-%d") %></span>
   </p>

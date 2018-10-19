@@ -30,8 +30,18 @@
 					end
 				%>
         <p class="price_tag">정가 : <%= rpr %> 원</h3>
-        <hr>
 
+		  <%if current_user && current_user.roles.first.name == 'admin' %>
+		    <a class="com-del-btn" href="<%= product_path(@product) %>" data-method="delete" data-confirm="정말로 삭제하시겠습니까?">
+		                Delete
+		    </a>
+		    <a class="com-del-btn" href="<%= edit_product_path(@product) %>" data-method="get" data-confirm="수정하시겠습니까?">
+		                Edit
+		  </a>
+		  <% end %>	
+
+		          	
+        <hr>
 	  <div class="show-body">
 	    <%= @product.contents.html_safe %>
 	  </div>
