@@ -19,4 +19,4 @@ test:
 # Do not keep production secrets in the repository,
 # instead read values from the environment.
 production:
-  secret_key_base: 03f859658d6ce51cc20180919f99a20c5ae56a09b4899a655f29e271dc7d06deedcf191b03965c51d71efd18d1008ad6c0d952603038fd3861948f35ddcbf6b3
+  secret_key_base: 094b1b6ad1c5109b167f9cd25014ae70c4d5aa713de13f18526416143a904e668a0677d1a19349ba4018ec1591e74d261d9324db519c617def9f4ab35ef1f95c
