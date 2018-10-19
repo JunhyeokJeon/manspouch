@@ -40,7 +40,7 @@ GEM
       tzinfo (~> 1.1)
     acts_as_votable (0.11.1)
     arel (7.1.4)
-    autoprefixer-rails (9.1.3)
+    autoprefixer-rails (9.2.1)
       execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
@@ -50,7 +50,7 @@ GEM
       sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.2)
-    cancancan (2.2.0)
+    cancancan (2.3.0)
     ckeditor (4.2.4)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -74,7 +74,7 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.6.4)
+    devise-i18n (1.6.5)
       devise (>= 4.4)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -83,7 +83,7 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    i18n (1.1.0)
+    i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     impressionist (1.6.1)
       nokogiri (~> 1)
@@ -106,13 +106,14 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    libv8 (3.16.14.19)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.7.0)
+    mail (2.7.1)
       mini_mime (>= 0.1.1)
     method_source (0.9.0)
     mime-types (3.2.2)
@@ -124,7 +125,7 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     nio4r (2.3.1)
-    nokogiri (1.8.4)
+    nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     paperclip (6.1.0)
@@ -158,12 +159,12 @@ GEM
     rails-i18n (5.1.1)
       i18n (>= 0.7, < 2)
       railties (>= 5.0, < 6)
-    rails_db (2.0.3)
+    rails_db (2.0.4)
       codemirror-rails
       kaminari
       rails (>= 5.0.0)
       ransack
-      simple_form
+      simple_form (~> 4.0.1)
       terminal-table
     railties (5.0.7)
       actionpack (= 5.0.7)
@@ -180,11 +181,12 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    ref (2.0.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
     rolify (5.2.0)
-    sass (3.5.7)
+    sass (3.6.0)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -215,6 +217,9 @@ GEM
       unicode-display_width (~> 1.1, >= 1.1.1)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
+    therubyracer (0.12.3)
+      libv8 (~> 3.16.14.15)
+      ref
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
@@ -223,12 +228,12 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.18)
+    uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.4.0)
     warden (1.2.7)
       rack (>= 1.0)
-    web-console (3.6.2)
+    web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
@@ -265,10 +270,11 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
+  therubyracer
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.4
+   1.16.6
