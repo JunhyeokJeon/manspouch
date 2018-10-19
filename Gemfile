@@ -21,6 +21,10 @@ gem 'devise-i18n'
 gem 'impressionist'
 # gem 'rails_db'
 
+group :development do
+  gem 'rails_db'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.7'
 
