@@ -21,9 +21,6 @@ class MypouchController < ApplicationController
       @products = Product.all
       types(@products)
 
-    elsif
-      @products = Product.all
-      @products = @products[0..1]
     end
 
     @manuals = Manual.all
