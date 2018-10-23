@@ -1,11 +1,11 @@
 .sv-q-col-1{
+    border-radius: 5px;
     padding: 0 !important;
     margin-right:20px;
-    width:100px !important;
-    height:100px;
+    width:150px !important;
+    height:150px;
     text-align: center;
-    float:left;
-    line-height: 100px;
+    line-height: 150px;
     background: #fff;
     border:1px solid #dedede;
     transition: .5s;
@@ -16,13 +16,32 @@
         }
     }
 }
-.checked{
+.sv_qstn{
+    div{
+        h5{
+            text-align: center;
+            margin-bottom: 100px;
+            span{
+                font-size:50px;
+                font-weight: 300;
+            }
+        }
+    }
+}
+.sv-q-col-1:hover{
+    background: #eee;
+    
+
+}
+.checked, .checked:hover{
     transition: .5s;
     background: #fc3a52;
     color:white;
+    border:none;
 }
 
 .sv_qstn{
+    text-align: center;
     div:first-child{
         margin-bottom: 10px;
     }
