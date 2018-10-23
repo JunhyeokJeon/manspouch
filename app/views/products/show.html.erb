@@ -9,16 +9,19 @@
         <p class="brand_name"><%= @product.brand %></p>
         <p class="pro_name"><%=@product.name%></p>
 
-
-        <% k = @product.score.floor()  %>
-		<p class = "score">평점 :
+				<% if @product.score != nil %>
+        	<% k = @product.score.floor()  %>
+				<% elsif %>
+					<% k = 0 %>
+				<% end %>
+				<p class = "score">평점 :
 	        <span style="color: red;"><%= '♥'*k %></span>
-	        <span style="color: #afafaf;"><%= '♥'* (5-k)%></span>
-			<span><%= @product.score %></span>&nbsp&nbsp
+	        <span style="color: #afafaf;"><%= '♡'* (5-k)%></span>
+					<span><%= @product.score %></span>&nbsp&nbsp
 
 	        (<%= @product.reviews.count %>&nbsp)
-	    </p>
-				<%
+		    </p>
+								<%
 					pr = @product.price.to_s
 					rpr = ""
 					if pr.length == 4
@@ -38,9 +41,9 @@
 		    <a class="com-del-btn" href="<%= edit_product_path(@product) %>" data-method="get" data-confirm="수정하시겠습니까?">
 		                Edit
 		  </a>
-		  <% end %>	
+		  <% end %>
 
-		          	
+
         <hr>
 	  <div class="show-body">
 	    <%= @product.contents.html_safe %>
