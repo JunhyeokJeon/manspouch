@@ -1,11 +1,43 @@
+.panel-footer,.edit_userspec{
+    text-align: center;
+}
+.mt-4{
+    h3{
+        font-size:60px;
+        font-weight: 100;
+        letter-spacing: -3px;
+
+    }
+}
+.sv_next_btn, .btn-primary, .sv_complete_btn{
+    width:50px !important;
+    height: 50px !important;
+    padding: 0px;
+    border:0px;
+    background: image-url('btn_left.png') center no-repeat;
+    background-size: 100%;
+    color:rgba(0,0,0,0);
+}
+.sv_prev_btn{
+    opacity: 0.8;
+    width:50px !important;
+    height: 50px !important;
+    padding: 0px;
+    border:0px;
+    background: image-url('btn_left.png') center no-repeat;
+    background-size: 100%;
+    color:rgba(0,0,0,0);
+    transform: rotate(180deg);
+}
 .sv-q-col-1{
+    letter-spacing: -1.5px;
     border-radius: 5px;
     padding: 0 !important;
     margin-right:20px;
-    width:150px !important;
-    height:150px;
+    width:80% !important;
+    height:50px;
     text-align: center;
-    line-height: 150px;
+    line-height: 50px;
     background: #fff;
     border:1px solid #dedede;
     transition: .5s;
@@ -22,6 +54,7 @@
             text-align: center;
             margin-bottom: 100px;
             span{
+                letter-spacing: -3px;
                 font-size:50px;
                 font-weight: 300;
             }
@@ -42,7 +75,7 @@
 
 .sv_qstn{
     text-align: center;
-    div:first-child{
+    div{
         margin-bottom: 10px;
     }
 }
