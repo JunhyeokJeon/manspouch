@@ -45,9 +45,9 @@
       <div class="left-nav">
         <ul>
           <% if current_user != nil %>
-            <li><a class="" href="<%= manuals_path %>">뷰티 설명서</a></li>
+            <li><a class="" href="<%= manuals_path %>">그루밍 설명서</a></li>
           <% elsif %>
-            <li><a class="" href="<%= manuals_path %>">뷰티 설명서</a></li>
+            <li><a class="" href="<%= manuals_path %>">그루밍 설명서</a></li>
           <% end %>
 
           <% if user_signed_in? && (current_user.userspec != nil) %>
