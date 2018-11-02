@@ -9,7 +9,6 @@ end
 gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano', '~> 2.15'
 gem 'capistrano-rails', group: :development
 gem 'capistrano-rbenv' # required
 gem 'capistrano-rbenv-install'
