@@ -1,4 +1,4 @@
-server '121.0.124.108', user: 'manspouch', roles: %w{web app db}
+server '121.0.124.108', user: 'root', roles: %w{web app db}
 set :nginx_server_name, 'www.manspouch.com'
 set :unicorn_workers, 4
 
