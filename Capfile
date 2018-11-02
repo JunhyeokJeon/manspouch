@@ -1,3 +1,18 @@
+# 추가
+require 'capistrano/bundler' # Rails needs Bundler, right?
+require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
+require 'capistrano/rbenv'
+require 'capistrano/rbenv_install'
+require 'capistrano/unicorn_nginx'
+require 'capistrano/faster_assets'
+require 'capistrano/upload-config'
+require 'capistrano/safe_deploy_to' 
+require 'capistrano/ssh_doctor'
+require 'capistrano/rails/console'
+require 'capistrano/rails/collection'
+require 'capistrano/rails_tail_log'
+
 # Load DSL and Setup Up Stages
 require 'capistrano/setup'
 

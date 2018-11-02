@@ -1,3 +1,7 @@
+erver '[server-ip]', user: '[deploy-username]', roles: %w{web app db}
+set :nginx_server_name, '[domain-name]'
+set :unicorn_workers, 4
+
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary server in each group
