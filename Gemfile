@@ -21,6 +21,8 @@ gem 'capistrano-rails-collection'
 gem 'capistrano-rails-tail-log'
 gem 'capistrano-faster-assets'
 
+gem 'capistrano-unicorn-nginx', github: 'hschoidr/capistrano-unicorn-nginx' 
+
 # Installed Gems
 gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 gem 'simple_form'
