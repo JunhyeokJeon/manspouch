@@ -1,4 +1,4 @@
-lock "3.7.1"
+# lock "3.7.1"
 set :application, 'manspouch'
 set :repo_url, "git@github.com:junhyeokjeon/#{fetch(:application)}.git"
 set :deploy_to, "/home/manspouch/apps/#{fetch(:application)}"
