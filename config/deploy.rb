@@ -1,10 +1,10 @@
 lock "3.7.1"
-set :application, '[application-name]'
-set :repo_url, "git@github.com:[user-name]/#{fetch(:application)}.git"
-set :deploy_to, "/home/[deployer-account ex: deployer]/apps/#{fetch(:application)}"
+set :application, 'manspouch'
+set :repo_url, "git@github.com:junhyeokjeon/#{fetch(:application)}.git"
+set :deploy_to, "/home/manspouch/apps/#{fetch(:application)}"
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
-set :rbenv_ruby, '[ruby-version]'
+set :rbenv_ruby, '2.4.0'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default values
