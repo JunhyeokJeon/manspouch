@@ -28,7 +28,7 @@ namespace :deploy do
 end
 
 # config valid only for Capistrano 3.1
-lock '3.2.1'
+# lock '3.2.1'
 
 set :application, 'my_app_name'
 set :repo_url, 'git@example.com:me/my_repo.git'
