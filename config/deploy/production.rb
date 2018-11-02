@@ -1,5 +1,5 @@
-erver '[server-ip]', user: '[deploy-username]', roles: %w{web app db}
-set :nginx_server_name, '[domain-name]'
+erver '121.0.124.108', user: 'manspouch', roles: %w{web app db}
+set :nginx_server_name, 'www.manspouch.com'
 set :unicorn_workers, 4
 
 # Simple Role Syntax
