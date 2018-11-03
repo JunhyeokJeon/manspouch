@@ -10,6 +10,7 @@ gem 'unicorn'
 gem 'mysql2'
 
 # Use Capistrano for deployment
+gem 'capistrano'
 gem 'capistrano-rails', group: :development
 gem 'capistrano-rbenv' # required
 gem 'capistrano-rbenv-install'
