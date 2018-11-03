@@ -1,6 +1,6 @@
 # lock "3.7.1"
 set :application, 'manspouch'
-set :repo_url, "git@github.com:junhyeokjeon/#{fetch(:application)}.git"
+set :repo_url, "git@github.com:JunhyeokJeon/#{fetch(:application)}.git"
 set :deploy_to, "/home/manspouch/apps/#{fetch(:application)}"
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
@@ -30,8 +30,13 @@ end
 # config valid only for Capistrano 3.1
 # lock '3.2.1'
 
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+
+#주석처리
+# set :application, 'my_app_name'
+# set :repo_url, 'git@example.com:me/my_repo.git'
+#여기까지
+
+
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -63,25 +68,32 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :deploy do
 
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
-    end
-  end
 
-  after :publishing, :restart
 
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
 
-end
+##주석처리
+
+
+# namespace :deploy do
+
+#   desc 'Restart application'
+#   task :restart do
+#     on roles(:app), in: :sequence, wait: 5 do
+#       # Your restart mechanism here, for example:
+#       # execute :touch, release_path.join('tmp/restart.txt')
+#     end
+#   end
+
+#   after :publishing, :restart
+
+#   after :restart, :clear_cache do
+#     on roles(:web), in: :groups, limit: 3, wait: 10 do
+#       # Here we can do anything such as:
+#       # within release_path do
+#       #   execute :rake, 'cache:clear'
+#       # end
+#     end
+#   end
+
+# end
