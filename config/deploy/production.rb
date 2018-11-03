@@ -1,6 +1,6 @@
-server '121.0.124.108', user: 'root', roles: %w{web app db}
-set :nginx_server_name, 'www.manspouch.com'
-set :unicorn_workers, 4
+# server '121.0.124.108', user: 'root', roles: %w{web app db}
+# set :nginx_server_name, 'www.manspouch.com'
+# set :unicorn_workers, 4
 
 # Simple Role Syntax
 # ==================
@@ -8,9 +8,9 @@ set :unicorn_workers, 4
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-# role :app, %w{deploy@example.com}
-# role :web, %w{deploy@example.com}
-# role :db,  %w{deploy@example.com}
+role :app, %w{deploy@121.0.124.108}
+role :web, %w{deploy@121.0.124.108}
+role :db,  %w{deploy@121.0.124.108}
 
 
 # Extended Server Syntax
