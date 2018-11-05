@@ -36,6 +36,15 @@
           <% elsif %>
             ←
           <% end %>
+        </span><br><br>
+        
+        <span style="font-size:1.3em; font-wieght:700; ">그루밍단계</span><br>
+        <span style="font-size:3em; font-weight:100;">   
+          <% if current_user.userspec != nil %>
+            <%= @userspec.usertype %>
+          <% elsif %>
+            ←
+          <% end %>       
         </span>
       </div>
 

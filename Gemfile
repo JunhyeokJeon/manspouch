@@ -6,9 +6,9 @@ git_source(:github) do |repo_name|
 end
 # dotname 서버 설정
 # Use Unicorn as the app server
-gem 'unicorn'
-gem 'unicorn-rails'
-gem 'mysql2'
+# gem 'unicorn'
+# gem 'unicorn-rails'
+# gem 'mysql2'
 
 # Use Capistrano for deployment
 gem 'capistrano'

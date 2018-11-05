@@ -65,7 +65,7 @@ class MypouchController < ApplicationController
     end
 
     @products_s.each do |product|
-      if product[stype] == true
+      if (product[stype] == true && product[cutype] ==true)
         @products << product
       end
     end

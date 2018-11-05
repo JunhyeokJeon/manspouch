@@ -2,8 +2,6 @@
 set :application, 'manspouch'
 set :repo_url, "git@github.com:JunhyeokJeon/manspouch.git"
 set :deploy_to, "/root/manspouch"
-set :user, 'deploy'
-set :linked_dirs, %w{log tmp/ pids tmp/cache tmp/sockets}
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.4.0'
@@ -18,22 +16,9 @@ set :pty, true
 set :keep_releases, 5
 
 before 'deploy:check:linked_files', 'config:push'
-
-
 namespace :deploy do
-	%w[start stop restart].each do |command|
-		desk 'Manage Unicorn'
-		task command do
-			on roles(:app), in: :sequence, wait: 1 do
-				execute "etc/init.d/unicorn_#{fetch(:application)} #{command}"
-			end
-		end
-	end
-
-	after :publishing, :restart
-
-  	after :restart, :clear_cache do
-    	on roles(:web), in: :groups, limit: 3, wait: 10 do
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
         # within release_path do
         # execute :rake, 'cache:clear'
@@ -41,7 +26,6 @@ namespace :deploy do
     end
   end
 end
-
 
 # config valid only for Capistrano 3.1
 # lock '3.2.1'
